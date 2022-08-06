@@ -3,7 +3,7 @@ import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
 import Button from '@material-ui/core/Button'
-import leetCodeLogo from '../../../logos/leetcode.png'
+import leetCodeLogo from '../../../../assets/leetcode.png'
 import Code from '@material-ui/icons/Code'
 import CloudQueue from '@material-ui/icons/CloudQueue'
 

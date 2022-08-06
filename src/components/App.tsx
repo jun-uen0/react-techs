@@ -1,6 +1,6 @@
-import './App.css'
-import NavBar from './components/NavBar/NavBar'
-import SideBar from './components/SideBar/SideBar'
+// import './App.css'
+import NavBar from './Layout/NavBar/NavBar'
+import SideBar from './Layout/SideBar/SideBar'
 import { MuiThemeProvider, createTheme } from '@material-ui/core/styles'
 
 function App() {
