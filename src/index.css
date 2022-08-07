@@ -28,10 +28,17 @@ code {
   flex: 1;
 }
 
-.drawer {
+.sideBar {
   width: 240px;
 }
 
+.cardArea {
+  width: 400px;
+  margin: 30px;
+  margin-top: 45px;
+}
+
 .main {
+  margin: 30px;
   flex: 1;
 }
