@@ -10,7 +10,7 @@ const MenuBotton: React.FC = () => {
 
   return (
     <div className={classes.root}>
-      <AppBar position="fixed" color="primary" className={classes.appBar}>
+      <AppBar className={classes.appBar}>
         <Toolbar>
           <TitleAndLogo />
           <ProfilePic />
@@ -24,10 +24,8 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
-  title: {
-    flexGrow: 1,
-  },
   appBar: {
+    color: 'primary',
     position: 'relative',
     zIndex: theme.zIndex.drawer + 1,
   },
