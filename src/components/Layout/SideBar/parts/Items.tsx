@@ -52,6 +52,6 @@ export default function ClippedDrawer() {
 
 const useStyles = makeStyles({
   text: {
-    color: 'white',
+    color: '#ffffff',
   },
 })
