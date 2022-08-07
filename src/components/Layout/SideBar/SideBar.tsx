@@ -7,7 +7,6 @@ import Divider from '@material-ui/core/Divider'
 import Items from './parts/Items'
 import Sns from './parts/Sns'
 
-const drawerWidth = 240
 
 export default function ClippedDrawer() {
 
@@ -18,6 +17,7 @@ export default function ClippedDrawer() {
       <Drawer
         variant="permanent"
         classes={{ paper: classes.paper }}
+        // open={true} // Animation and Focus. If you comment 'variant="permanent"' above, this works.
         >
         <Toolbar />
         <Box sx={{ overflow: 'auto' }}>
@@ -36,6 +36,5 @@ export default function ClippedDrawer() {
 const useStyles = makeStyles({
   paper: {
     background: "#091c33",
-    width: drawerWidth,
   },
 })
