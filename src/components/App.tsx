@@ -1,6 +1,7 @@
 import NavBar from './Layout/NavBar/NavBar'
 import SideBar from './Layout/SideBar/SideBar'
 import ContentsArea from './Layout/ContentsArea/ContentsArea'
+import CardArea from './Layout/CardArea/CardArea'
 import { MuiThemeProvider, createTheme } from '@material-ui/core/styles'
 
 function App() {
@@ -11,12 +12,15 @@ function App() {
           <NavBar />
         </div>
         <div className="container">
-          <aside className="drawer">
+          <aside className="sideBar">
             <SideBar />
           </aside>
           <main className="main">
             <ContentsArea />
           </main>
+          <div className="cardArea">
+            <CardArea />
+          </div>
         </div>
       </MuiThemeProvider>
     </div>
@@ -39,5 +43,5 @@ const theme = createTheme({
   }
 })
 
-export default App;
+export default App
 
