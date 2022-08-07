@@ -1,0 +1,53 @@
+import ReactMarkdown from 'react-markdown'
+import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter'
+import {dark} from 'react-syntax-highlighter/dist/esm/styles/prism'
+import { useEffect, useState } from "react"
+import axios from "axios"
+
+// Did you know you can use tildes instead of backticks for code in markdown? ✨
+const markdown = `Here is some JavaScript code:
+
+~~~js
+console.log('It works!')
+~~~
+`
+
+function App() {
+
+  const url =
+  "https://raw.githubusercontent.com/jun-uen0/react-hooks/main/01_useState.md"
+  const [read, setRead] = useState('Could not load file')
+
+  useEffect(() => {
+    axios.get(url).then((response) => {
+      setRead(response.data);
+    });
+  }, []);
+  return (
+    <>
+      <ReactMarkdown
+        children={read}
+        components={{
+          code({node, inline, className, children, ...props}) {
+            const match = /language-(\w+)/.exec(className || '')
+            return !inline && match ? (
+              <SyntaxHighlighter
+              children={String(children).replace(/\n$/, '')}
+              style={dark as any}
+              language={match[1]}
+              PreTag="div"
+              {...props}
+              />
+              ) : (
+                <code className={className} {...props}>
+                {children}
+              </code>
+            )
+          }
+        }}
+      />
+    </>
+  )
+}
+
+export default App
