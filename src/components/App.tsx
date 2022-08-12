@@ -15,7 +15,7 @@ function App() {
           <aside className="sideBar">
             <SideBar />
           </aside>
-          <main className="main">
+          <main className="contentsArea">
             <ContentsArea />
           </main>
           <div className="cardArea">
@@ -34,14 +34,14 @@ const theme = createTheme({
     },
     secondary: {
       main: '#ffffff'
-    }
+    },
   },
   typography: {
     button: {
       textTransform: 'none'
     }
-  }
+  },
+  
 })
 
 export default App
-
