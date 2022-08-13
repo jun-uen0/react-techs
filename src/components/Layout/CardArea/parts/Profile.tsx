@@ -4,6 +4,7 @@ import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 import CardActions from '@material-ui/core/CardActions'
 import Typography from '@material-ui/core/Typography'
+import profilePic from '../../../../assets/profile.jpeg'
 
 export default function ClippedDrawer() {
 
@@ -15,6 +16,19 @@ export default function ClippedDrawer() {
         <CardContent>
           <Typography variant="h5" component="div">
             Jun Ueno
+          </Typography>
+          <Typography>
+            <img 
+              src={profilePic}
+              style={{
+                width: 150,
+                height: 150,
+                borderRadius: '50%',
+                overflow: 'hidden',
+                borderWidth: 3,
+                borderColor: 'red',
+              }}
+            />
           </Typography>
           <Typography>
             <br />
