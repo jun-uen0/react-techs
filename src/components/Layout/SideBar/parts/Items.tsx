@@ -7,7 +7,7 @@ import leetCodeLogo from '../../../../assets/leetcode.png'
 import Code from '@material-ui/icons/Code'
 import CloudQueue from '@material-ui/icons/CloudQueue'
 
-export default function ClippedDrawer() {
+const ClippedDrawer: React.FC = () => {
 
   const classes = useStyles()
 
@@ -55,3 +55,5 @@ const useStyles = makeStyles({
     color: '#ffffff',
   },
 })
+
+export default ClippedDrawer

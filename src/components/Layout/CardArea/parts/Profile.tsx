@@ -6,7 +6,7 @@ import CardActions from '@material-ui/core/CardActions'
 import Typography from '@material-ui/core/Typography'
 import profilePic from '../../../../assets/profile.jpeg'
 
-export default function ClippedDrawer() {
+const ClippedDrawer: React.FC = () => {
 
   const classes = useStyles()
 
@@ -60,3 +60,5 @@ const useStyles = makeStyles({
     margin: '10px',
   },
 })
+
+export default ClippedDrawer

@@ -4,7 +4,7 @@ import ContentsArea from './Layout/ContentsArea/ContentsArea'
 import CardArea from './Layout/CardArea/CardArea'
 import { MuiThemeProvider, createTheme } from '@material-ui/core/styles'
 
-function App() {
+const App: React.FC = () => {
   return (
     <div className="App">
       <MuiThemeProvider theme={theme}>
