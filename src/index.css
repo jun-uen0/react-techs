@@ -38,7 +38,7 @@ code {
   margin-top: 45px;
 }
 
-.contentsArea {
+.contents {
   text-align: left;
   font-family: Sans-serif;
   background-color: #f5f5f5;
@@ -46,4 +46,14 @@ code {
   margin-top: 45px;
   flex: 1;
   padding: 10px;
+}
+
+.contentsArea {
+  text-align: left;
+  font-family: Sans-serif;
+  /* background-color: #f5f5f5; */
+  margin: 30px;
+  margin-top: 45px;
+  flex: 1;
+  /* padding: 10px; */
 }
