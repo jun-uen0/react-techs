@@ -8,9 +8,6 @@ const ContentCards: React.FC = () => {
       <Box>
         {/* @todo For next task, get data by using forEach */}
         <ContentCard />
-        <ContentCard />
-        <ContentCard />
-        <ContentCard />
       </Box>
     </>
   )
