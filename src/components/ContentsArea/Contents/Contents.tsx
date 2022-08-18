@@ -4,25 +4,18 @@ import ReactMarkdown from 'react-markdown'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { xonokai } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
-const fileName = 'react.md'
+const fileName = '01_useState.md'
 
-const ContentsArea: React.FC = () => {
-
-  const [content, setContent] = useState('Could not fetch markdown file')
-
+const Content: React.FC = () => {
+  
+  // Get the contents of the markdown file from GitHub
+  const url =
+  `https://raw.githubusercontent.com/jun-uen0/react-hooks/main/${fileName}`
+  const [read, setRead] = useState('Could not fetch markdown file')
   useEffect(() => {
-    import('../../../../contents/' + fileName)
-    .then(res => {
-      fetch(res.default)
-          .then(res => res.text())
-          .then(res => setContent(res))
-          .catch(err => console.log(err))
-      })
-      .catch(err => console.log(err))
-
-    axios.get(content)
+    axios.get(url)
     .then((res) => {
-      setContent(res.data);
+      setRead(res.data);
     })
     .catch((err) => {
       console.log('Error occured when fetching markdown data' + err)
@@ -32,21 +25,21 @@ const ContentsArea: React.FC = () => {
   return (
     <>
       <ReactMarkdown
-        children={content}
+        children={read}
         components={{
-          code({node, inline, className, children, ...props}) {
+          code({inline, className, children}) {
             const match = /language-(\w+)/.exec(className || '')
+            // If text is inline, use the inline language
             return !inline && match ? (
               <SyntaxHighlighter
                 children={String(children).replace(/\n$/, '')}
                 style={xonokai as any}
                 language={match[1]}
                 PreTag="div"
-                {...props}
               />
-            ) : (
-              <code className={className} {...props}>
-                {children}
+              // If text is not inline, use the markdown language
+              ) : (
+                <code className={className}>
               </code>
             )
           }
@@ -56,4 +49,4 @@ const ContentsArea: React.FC = () => {
   )
 }
 
-export default ContentsArea
+export default Content

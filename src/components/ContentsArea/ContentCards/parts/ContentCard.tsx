@@ -5,7 +5,11 @@ import CardContent from '@material-ui/core/CardContent'
 import CardActions from '@material-ui/core/CardActions'
 import Typography from '@material-ui/core/Typography'
 
-const ContentCard: React.FC = () => {
+interface ContentCardProps {
+  isClicked: boolean
+}
+
+const ContentCard: React.FC = (props) => {
 
   const classes = useStyles()
 
@@ -26,7 +30,12 @@ const ContentCard: React.FC = () => {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button classes={{ text: classes.learnMore }} >
+          <Button 
+            classes={{ text: classes.learnMore }}
+            // onClick={() => {
+            //   props.isClicked = !props.isClicked
+            // }}
+          >
             Read
           </Button>
         </CardActions>
