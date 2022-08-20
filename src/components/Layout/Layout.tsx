@@ -14,12 +14,12 @@ const Layout: React.FC = () => {
           <NavBar />
         </div>
         <div className="container">
-          <aside className="sideBar">
+          <div className="sideBar">
             <SideBar />
-          </aside>
-          <main className="contentsArea">
+          </div>
+          <div className="contentsArea">
             <ContentsArea />
-          </main>
+          </div>
           <div className="cardArea">
             <CardArea />
           </div>
