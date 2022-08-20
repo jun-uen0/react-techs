@@ -5,11 +5,12 @@ import CardContent from '@material-ui/core/CardContent'
 import CardActions from '@material-ui/core/CardActions'
 import Typography from '@material-ui/core/Typography'
 
-interface ContentCardProps {
-  isClicked: boolean
+type contentType = {
+  title: string
+  description: string
 }
 
-const ContentCard: React.FC = (props) => {
+const ContentCard: React.FC<contentType> = (props) => {
 
   const classes = useStyles()
 
@@ -18,23 +19,19 @@ const ContentCard: React.FC = (props) => {
       <Card className={classes.back}>
         <CardContent>
           <Typography variant="h5" component="div">
-            File Name
+            {props.title}
           </Typography>
           <Typography>
             <br />
-            Summary
-          </Typography>
-          <Typography variant="body2">
-            <br />
-            Some lines in the file
+            {props.description}
           </Typography>
         </CardContent>
         <CardActions>
           <Button 
             classes={{ text: classes.learnMore }}
-            // onClick={() => {
-            //   props.isClicked = !props.isClicked
-            // }}
+            onClick={() => {
+              console.log('clicked')
+            }}
           >
             Read
           </Button>
