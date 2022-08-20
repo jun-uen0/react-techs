@@ -1,0 +1,12 @@
+[
+  {
+    "title": "useState",
+    "url": "https://github.com/jun-uen0/react-hooks/blob/main/01_useState.md",
+    "description": "useState is a hook that lets we add a local state to our component. Where is state data? It is stored in the component's props. Which means we can not refer state from other components. But we can call the function (Ex. Example()) to use the state."
+  },
+  {
+    "title": "useEffect",
+    "url": "https://github.com/jun-uen0/react-hooks/blob/main/02_useEffect.md",
+    "description": "We can perform data fetching, subscripting, and manually changing DOM from React components. In React, we call these operation 'side-effects' or 'effects' in short. And we have to use useEffect to perform these side-effects."
+  }
+]
