@@ -1,10 +1,18 @@
+import { useState } from 'react'
 import NavBar from './NavBar/NavBar'
 import SideBar from './SideBar/SideBar'
 import CardArea from './CardArea/CardArea'
 import ContentsArea from "../ContentsArea/ContentsArea"
 import { MuiThemeProvider, createTheme } from '@material-ui/core/styles'
 
+// @todo: store in other file
+type Language = 'English' | 'Japanese'
+
 const Layout: React.FC = () => {
+
+  // @todo: handle language mode with this
+  const [language, setLanguage] = useState<Language>('English')
+
   return (
     <div className="App">
       <MuiThemeProvider theme={theme}>

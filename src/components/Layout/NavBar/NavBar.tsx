@@ -1,5 +1,5 @@
 import TitleAndLogo from './parts/TitleAndLogo'
-import ProfilePic from './parts/ProfilePic'
+import Language from './parts/Language'
 import makeStyles from '@material-ui/core/styles/makeStyles'
 import Toolbar from '@material-ui/core/Toolbar'
 import AppBar from '@material-ui/core/AppBar'
@@ -13,7 +13,7 @@ const MenuBotton: React.FC = () => {
       <AppBar className={classes.appBar}>
         <Toolbar>
           <TitleAndLogo />
-          <ProfilePic />
+          <Language />
         </Toolbar>
       </AppBar>
     </div>
