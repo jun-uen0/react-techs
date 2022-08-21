@@ -14,5 +14,13 @@
     "repo": "react-hooks",
     "file": "02_useEffect.md",
     "description": "We can perform data fetching, subscripting, and manually changing DOM from React components. In React, we call these operation 'side-effects' or 'effects' in short. And we have to use useEffect to perform these side-effects."
+  },
+  {
+    "title": "useContext",
+    "user": "jun-uen0",
+    "branch":"main",
+    "repo": "react-hooks",
+    "file": "03_useContext.md",
+    "description": "Context in React.js provides a way to pass data through the components without props. We can avoid to pass props again and again. (Parent to child via props)"
   }
 ]
