@@ -7,12 +7,22 @@ import leetCodeLogo from '../../../../assets/leetcode.png'
 import Code from '@material-ui/icons/Code'
 import CloudQueue from '@material-ui/icons/CloudQueue'
 
-const ClippedDrawer: React.FC = () => {
+const Items: React.FC = () => {
 
   const classes = useStyles()
 
   return (
     <>
+      <ListItem key={'React'}>
+        <Button classes={{ text: classes.text }} >
+          <ListItemIcon>
+            <Code
+              color='secondary'
+            />
+          </ListItemIcon>
+          <ListItemText primary={'React'} />
+        </Button>
+      </ListItem>
       <ListItem key={'LeetCode'}>
         <Button classes={{ text: classes.text }}>
           <ListItemIcon>
@@ -23,17 +33,7 @@ const ClippedDrawer: React.FC = () => {
               width={'25px'}
             />
           </ListItemIcon>
-          <ListItemText primary={'LeetCode'} />
-        </Button>
-      </ListItem>
-      <ListItem key={'React'}>
-        <Button classes={{ text: classes.text }} >
-          <ListItemIcon>
-            <Code
-              color='secondary'
-            />
-          </ListItemIcon>
-          <ListItemText primary={'React (not yet)'} />
+          <ListItemText primary={'LeetCode (not yet)'} />
         </Button>
       </ListItem>
       <ListItem key={'AWS'}>
@@ -56,4 +56,4 @@ const useStyles = makeStyles({
   },
 })
 
-export default ClippedDrawer
+export default Items

@@ -5,6 +5,7 @@ import CardContent from '@material-ui/core/CardContent'
 import CardActions from '@material-ui/core/CardActions'
 import Typography from '@material-ui/core/Typography'
 import profilePic from '../../../../assets/profile.jpeg'
+import Sns from './Sns'
 
 const ClippedDrawer: React.FC = () => {
 
@@ -14,9 +15,6 @@ const ClippedDrawer: React.FC = () => {
     <>
       <Card className={classes.back}>
         <CardContent>
-          <Typography variant="h5" component="div">
-            Jun Ueno
-          </Typography>
           <Typography>
             <img 
               src={profilePic}
@@ -30,19 +28,22 @@ const ClippedDrawer: React.FC = () => {
               }}
             />
           </Typography>
+          <span style={{ marginLeft: 16}} />
+          <Typography variant="h5" component="div">
+            Jun Ueno
+          </Typography>
+          <span style={{ marginLeft: 16}} />
+          <Sns />
           <Typography>
             <br />
             Web Software Developer / Project Manager
           </Typography>
+          <span style={{ marginLeft: 16}} />
           <Typography variant="body2">
             "If you feel like the dumbest person in the room then you're in the correct room."
           </Typography>
         </CardContent>
-        <CardActions>
-          <Button classes={{ text: classes.learnMore }} >
-            Learn More
-          </Button>
-        </CardActions>
+        <span style={{ marginLeft: 16}} />
       </Card>
       <span style={{ marginLeft: 16}} />
     </>
