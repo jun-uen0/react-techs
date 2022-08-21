@@ -4,9 +4,7 @@ import CardArea from './CardArea/CardArea'
 import ContentsArea from "../ContentsArea/ContentsArea"
 import { MuiThemeProvider, createTheme } from '@material-ui/core/styles'
 
-
 const Layout: React.FC = () => {
-
   return (
     <div className="App">
       <MuiThemeProvider theme={theme}>
@@ -29,6 +27,7 @@ const Layout: React.FC = () => {
   )
 }
 
+// @todo: theme def must be in different file
 const theme = createTheme({
   palette: {
     primary: {
