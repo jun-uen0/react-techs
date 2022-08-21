@@ -1,16 +1,34 @@
 import axios from "axios"
-import { useEffect, useState } from "react"
+import { useEffect, useState, Dispatch, SetStateAction } from "react"
 import ReactMarkdown from 'react-markdown'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { xonokai } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
-const fileName = '01_useState.md'
+// @todo: date type must be other file 
+type contentType = {
+  title: string
+  user: string
+  repo: string
+  branch: string
+  file: string
+  description: string
+}
 
-const Content: React.FC = () => {
+// @todo in other file
+type ContentProps = {
+  setShowCards: Dispatch<SetStateAction<boolean>>
+  content: contentType
+}
+
+const Content: React.FC<ContentProps> = (props) => {
+  
+  const content = props.content
+
+  // @todo show "Loading" till done rendering
   
   // Get the contents of the markdown file from GitHub
   const url =
-  `https://raw.githubusercontent.com/jun-uen0/react-hooks/main/${fileName}`
+  `https://raw.githubusercontent.com/${content.user}/${content.repo}/${content.branch}/${content.file}`
   const [read, setRead] = useState('Could not fetch markdown file')
   useEffect(() => {
     axios.get(url)
@@ -24,6 +42,13 @@ const Content: React.FC = () => {
 
   return (
     <>
+      <button
+        onClick={() => {
+          props.setShowCards(true)
+        }}
+      >
+        ← Back
+      </button>
       <ReactMarkdown
         children={read}
         components={{

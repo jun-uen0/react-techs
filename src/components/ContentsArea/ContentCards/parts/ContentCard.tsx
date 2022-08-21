@@ -1,3 +1,4 @@
+import { Dispatch, SetStateAction } from 'react'
 import makeStyles from '@material-ui/core/styles/makeStyles'
 import Button from '@material-ui/core/Button'
 import Card from '@material-ui/core/Card'
@@ -5,12 +6,16 @@ import CardContent from '@material-ui/core/CardContent'
 import CardActions from '@material-ui/core/CardActions'
 import Typography from '@material-ui/core/Typography'
 
-type contentType = {
+// @todo in other file
+type ContentCardProps = {
+  setShowCards: Dispatch<SetStateAction<boolean>>
+  setContentNumber: Dispatch<SetStateAction<number>>
+  idx: number
   title: string
   description: string
 }
 
-const ContentCard: React.FC<contentType> = (props) => {
+const ContentCard: React.FC<ContentCardProps> = (props) => {
 
   const classes = useStyles()
 
@@ -30,7 +35,8 @@ const ContentCard: React.FC<contentType> = (props) => {
           <Button 
             classes={{ text: classes.learnMore }}
             onClick={() => {
-              console.log('clicked')
+              props.setShowCards(false)
+              props.setContentNumber(props.idx)
             }}
           >
             Read
@@ -42,6 +48,7 @@ const ContentCard: React.FC<contentType> = (props) => {
   )
 }
 
+// @todo: theme def must be in different file
 const useStyles = makeStyles({
   back: {
     background: "#091c33",

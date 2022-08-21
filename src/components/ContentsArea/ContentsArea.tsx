@@ -13,11 +13,11 @@ const ContentsArea: React.FC = () => {
   // @todo the codes must be in other file (Redux?)
   const [showCards, setShowCards] = useState(() => {
     const showCards = localStorage.getItem('showCards')
-    return JSON.parse(showCards as string) ?? true
+    return JSON.parse(showCards as string) as boolean ?? true
   })
   const [contentNumber, setContentNumber] = useState(() => {
     const contentNumber = localStorage.getItem('contentNumber')
-    return JSON.parse(contentNumber as string) ?? -1
+    return JSON.parse(contentNumber as string) as number ?? -1
   })
 
   // Change value of showCards in local storage when state showCards is changed
