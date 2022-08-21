@@ -27,7 +27,7 @@ const Layout: React.FC = () => {
   )
 }
 
-// @todo: theme def must be in different file
+// @todo: theme def must be different file
 const theme = createTheme({
   palette: {
     primary: {

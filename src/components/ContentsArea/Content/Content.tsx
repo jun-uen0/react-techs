@@ -29,7 +29,7 @@ const Content: React.FC<ContentProps> = (props) => {
   // Get the contents of the markdown file from GitHub
   const url =
   `https://raw.githubusercontent.com/${content.user}/${content.repo}/${content.branch}/${content.file}`
-  const [read, setRead] = useState('Could not fetch markdown file')
+  const [read, setRead] = useState('')
   useEffect(() => {
     axios.get(url)
     .then((res) => {
@@ -49,27 +49,29 @@ const Content: React.FC<ContentProps> = (props) => {
       >
         ← Back
       </button>
-      <ReactMarkdown
-        children={read}
-        components={{
-          code({inline, className, children}) {
-            const match = /language-(\w+)/.exec(className || '')
-            // If text is inline, use the inline language
-            return !inline && match ? (
-              <SyntaxHighlighter
-                children={String(children).replace(/\n$/, '')}
-                style={xonokai as any}
-                language={match[1]}
-                PreTag="div"
-              />
-              // If text is not inline, use the markdown language
-              ) : (
-                <code className={className}>
-              </code>
-            )
-          }
-        }}
-      />
+      <div className="content">
+        <ReactMarkdown
+          children={read}
+          components={{
+            code({inline, className, children}) {
+              const match = /language-(\w+)/.exec(className || '')
+              // If text is inline, use the inline language
+              return !inline && match ? (
+                <SyntaxHighlighter
+                  children={String(children).replace(/\n$/, '')}
+                  style={xonokai as any}
+                  language={match[1]}
+                  PreTag="div"
+                />
+                // If text is not inline, use the markdown language
+                ) : (
+                  <code className={className}>
+                </code>
+              )
+            }
+          }}
+        />
+      </div>
     </>
   )
 }
