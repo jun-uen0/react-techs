@@ -2,7 +2,11 @@ import { useState, useEffect } from "react"
 import ContentCards from "./ContentCards/ContentCards"
 import Content from "./Content/Content"
 
-const ContentsArea: React.FC = () => {
+type ContentsAreaProps = {
+  isEnglish: boolean
+}
+
+const ContentsArea: React.FC<ContentsAreaProps> = (props) => {
 
   // @todo: 'contents' must be state value ([react,leetcode,aws, etc...]) with type def
   // Temporary only 'react'
@@ -40,6 +44,7 @@ const ContentsArea: React.FC = () => {
       : <Content
           setShowCards={setShowCards}
           content={contents[contentNumber]}
+          isEnglish={props.isEnglish}
         />}
     </>
   )

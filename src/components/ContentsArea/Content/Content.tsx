@@ -15,6 +15,7 @@ type contentType = {
 type ContentProps = {
   setShowCards: Dispatch<SetStateAction<boolean>>
   content: contentType
+  isEnglish: boolean
 }
 
 const Content: React.FC<ContentProps> = (props) => {
@@ -27,13 +28,16 @@ const Content: React.FC<ContentProps> = (props) => {
   const pathWithBranch = splitedPath.join('/') // Put together them again
 
   // @todo handle language with icon
-  const language = 'en'
-
+  const language = () => {
+    if (props.isEnglish) return 'en'
+    return 'jp'
+  }
+  
   // console.log(`https://raw.githubusercontent.com/jun-uen0/${pathWithBranch}/${fileName}_${language}.md`)
   
   // Get the contents of the markdown file from GitHub
-  const url =
-  `https://raw.githubusercontent.com/jun-uen0/${pathWithBranch}/${fileName}_${language}.md`
+  const url = `https://raw.githubusercontent.com/jun-uen0/${pathWithBranch}/${fileName}_${language()}.md`
+
   const [read, setRead] = useState('')
   useEffect(() => {
     axios.get(url)
@@ -43,7 +47,7 @@ const Content: React.FC<ContentProps> = (props) => {
     .catch((err) => {
       console.log('Error occured when fetching markdown data' + err)
     })
-  }, [])
+  }, [props.isEnglish])
 
   return (
     <>

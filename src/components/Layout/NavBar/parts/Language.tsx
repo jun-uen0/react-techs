@@ -1,11 +1,19 @@
+import { Dispatch, SetStateAction } from 'react'
 import Button from '@material-ui/core/Button'
 import language from '../../../../assets/language_icon_white.png'
 
-const languageClick = () => {
-  console.log('languageClick is called')
+type LanguageProps = {
+  isEnglish: boolean
+  setIsEnglish: Dispatch<SetStateAction<boolean>>
 }
 
-const Language: React.FC = () => {
+const Language: React.FC<LanguageProps> = (props) => {
+
+  const languageClick = () => {
+    console.log('languageClick is called')
+    props.setIsEnglish(!props.isEnglish)
+  }
+
   return (
     <>
       <Button
