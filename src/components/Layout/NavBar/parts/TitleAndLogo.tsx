@@ -19,7 +19,7 @@ const TitleAndlogo: React.FC = () => {
             onClick={titleClick}
             color="inherit"
           >
-            TITLE & LOGO
+            amnmmkz
           </Button>
         </Grid>
       </Typography>
