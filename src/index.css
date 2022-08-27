@@ -42,6 +42,10 @@ code {
   color: #ffffff;
 }
 
+.content img{
+  width: 100%;
+}
+
 .contents {
   text-align: left;
   font-family: Sans-serif;
