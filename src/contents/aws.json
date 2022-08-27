@@ -1,0 +1,7 @@
+[
+  {
+    "title": "Craete AWS ECS Fargate",
+    "path": "articles/articles/aws/create_fargate",
+    "description": "Will explain how to create AWS ECS Fargate with very basic way."
+  }
+]
