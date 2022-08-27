@@ -7,10 +7,7 @@ import { xonokai } from 'react-syntax-highlighter/dist/esm/styles/prism'
 // @todo: date type must be other file 
 type contentType = {
   title: string
-  user: string
-  repo: string
-  branch: string
-  file: string
+  path: string
   description: string
 }
 
@@ -21,14 +18,22 @@ type ContentProps = {
 }
 
 const Content: React.FC<ContentProps> = (props) => {
-  
-  const content = props.content
 
   // @todo show "Loading" till done rendering
+
+  const splitedPath = (props.content.path).split('/')
+  const fileName = splitedPath[splitedPath.length -1] // file name is as directory name + '_' + language
+  splitedPath.splice(1,0,'main') // Add branch name after repogitory name
+  const pathWithBranch = splitedPath.join('/') // Put together them again
+
+  // @todo handle language with icon
+  const language = 'en'
+
+  // console.log(`https://raw.githubusercontent.com/jun-uen0/${pathWithBranch}/${fileName}_${language}.md`)
   
   // Get the contents of the markdown file from GitHub
   const url =
-  `https://raw.githubusercontent.com/${content.user}/${content.repo}/${content.branch}/${content.file}`
+  `https://raw.githubusercontent.com/jun-uen0/${pathWithBranch}/${fileName}_${language}.md`
   const [read, setRead] = useState('')
   useEffect(() => {
     axios.get(url)
