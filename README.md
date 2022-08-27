@@ -1,6 +1,8 @@
 # react-techs (temp)
 ...Work in progress
+
 @todo: change repo name (React markdown blog, or something)
+
 Added MIT LICENSE
 
 # Install and Start
