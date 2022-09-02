@@ -11,7 +11,9 @@ const ContentsArea: React.FC<ContentsAreaProps> = (props) => {
   // @todo: 'contents' must be state value ([react,leetcode,aws, etc...]) with type def
   // Temporary only 'react'
   // const contents = require('../../contents/react.json')
-  const contents = require('../../contents/aws.json')
+  // const contents = require('../../contents/aws.json')
+  const contents = require('../../contents/leetcode.json')
+
   
   // Get value of state showCards from local storage
   // Return true when local storage has nothing
