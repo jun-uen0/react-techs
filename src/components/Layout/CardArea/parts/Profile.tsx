@@ -2,7 +2,7 @@ import makeStyles from '@material-ui/core/styles/makeStyles'
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 import Typography from '@material-ui/core/Typography'
-import profilePic from '../../../../assets/profile.png'
+import profilePic from '../../../../assets/profile_with_round.png'
 import Sns from './Sns'
 
 const ClippedDrawer: React.FC = () => {
@@ -20,7 +20,6 @@ const ClippedDrawer: React.FC = () => {
                 width: 150,
                 height: 150,
                 borderRadius: '50%',
-                border: '5px solid #ffffff',
               }}
             />
           </Typography>
