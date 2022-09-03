@@ -1,7 +1,7 @@
 [
   {
-    "title": "test",
-    "path": "articles/articles/aws/create_fargate",
-    "description": "test"
+    "title": "Binary Search",
+    "path": "articles/articles/algorithms/binary_search",
+    "description": "Explanation of the binary search algorithm"
   }
 ]
