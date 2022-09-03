@@ -5,6 +5,8 @@
 
 Added MIT LICENSE
 
+Version of firebase-tools: 8.12.1
+
 # Install and Start
 ※ Node.js: 14.16.1
 
