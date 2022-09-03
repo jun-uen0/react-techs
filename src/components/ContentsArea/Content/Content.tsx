@@ -20,20 +20,15 @@ type ContentProps = {
 
 const Content: React.FC<ContentProps> = (props) => {
 
-  // @todo show "Loading" till done rendering
-
   const splitedPath = (props.content.path).split('/')
   const fileName = splitedPath[splitedPath.length -1] // file name is as directory name + '_' + language
   splitedPath.splice(1,0,'main') // Add branch name after repogitory name
   const pathWithBranch = splitedPath.join('/') // Put together them again
 
-  // @todo handle language with icon
   const language = () => {
     if (props.isEnglish) return 'en'
     return 'jp'
   }
-  
-  // console.log(`https://raw.githubusercontent.com/jun-uen0/${pathWithBranch}/${fileName}_${language}.md`)
   
   // Get the contents of the markdown file from GitHub
   const url = `https://raw.githubusercontent.com/jun-uen0/${pathWithBranch}/${fileName}_${language()}.md`
