@@ -22,7 +22,7 @@ const Language: React.FC<LanguageProps> = (props) => {
       >
         <img
           src={language}
-          alt='LeetCode logo'
+          alt='language logo'
           height={'25px'}
           width={'25px'}
         />
