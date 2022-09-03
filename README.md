@@ -1,22 +1,10 @@
-# react-techs (temp)
-...Work in progress
+# react-techs
+MIT LICENSE
+Hosting link: https://jun-uen0.web.app
 
-@todo: change repo name (React markdown blog, or something)
+This is a tech blog site made with React.js and Firebase.
+Field of contents: Algorithms, React, AWS, etc.
 
-Added MIT LICENSE
-
-Version of firebase-tools: 8.12.1
-
-# Install and Start
-※ Node.js: 14.16.1
-
-```shell
-npm i
-```
-
-```shell
-npm start
-```
-
-# Usage
-@todo: Explain how to use (fetching markdown data)
+# Note for dev
+Node.js: 14.16.1
+firebase-tools: 8.12.1
