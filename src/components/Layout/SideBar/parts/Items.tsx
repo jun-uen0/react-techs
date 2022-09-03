@@ -13,6 +13,7 @@ type contentType = 'algorithms' | 'react' | 'leetcode' | 'aws'
 
 type ItemsProps = {
   setContentsType: Dispatch<SetStateAction<contentType>>
+  setShowCards: Dispatch<SetStateAction<boolean>>
 }
 
 const Items: React.FC<ItemsProps> = (props) => {
@@ -24,7 +25,11 @@ const Items: React.FC<ItemsProps> = (props) => {
       <ListItem key={'Algorithms'}>
         <Button 
           classes={{ text: classes.text }}
-          onClick={() => props.setContentsType('algorithms')}
+          onClick={() => {
+            console.log('Algorithms clicked')
+            props.setContentsType('algorithms')
+            props.setShowCards(true)
+          }}
         >
           <ListItemIcon>
             <Code
@@ -37,7 +42,11 @@ const Items: React.FC<ItemsProps> = (props) => {
       <ListItem key={'React'}>
         <Button 
           classes={{ text: classes.text }}
-          onClick={() => props.setContentsType('react')}
+          onClick={() => {
+            console.log('React clicked')
+            props.setContentsType('react')
+            props.setShowCards(true)
+          }}
         >
           <ListItemIcon>
             <img
@@ -53,7 +62,11 @@ const Items: React.FC<ItemsProps> = (props) => {
       <ListItem key={'LeetCode'}>
         <Button 
           classes={{ text: classes.text }}
-          onClick={() => props.setContentsType('leetcode')}
+          onClick={() => {
+            console.log('LeetCode clicked')
+            props.setContentsType('leetcode')
+            props.setShowCards(true)
+          }}
         >
           <ListItemIcon>
             <img
@@ -69,7 +82,11 @@ const Items: React.FC<ItemsProps> = (props) => {
       <ListItem key={'AWS'}>
         <Button 
           classes={{ text: classes.text }}
-          onClick={() => props.setContentsType('aws')}
+          onClick={() => {
+            console.log('AWS clicked')
+            props.setContentsType('aws')
+            props.setShowCards(true)
+          }}
         >
           <ListItemIcon>
             <CloudQueue 

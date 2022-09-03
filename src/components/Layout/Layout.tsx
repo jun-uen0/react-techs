@@ -25,6 +25,14 @@ const Layout: React.FC = () => {
     localStorage.setItem('contentsType', JSON.stringify(contentsType))
   }, [contentsType])
 
+  const [showCards, setShowCards] = useState(() => {
+    const showCards = localStorage.getItem('showCards')
+    return JSON.parse(showCards as string) as boolean ?? true
+  })
+  useEffect(() => {
+    localStorage.setItem('showCards', JSON.stringify(showCards))
+  }, [showCards])
+
   return (
     <div className="App">
       <MuiThemeProvider theme={theme}>
@@ -38,10 +46,13 @@ const Layout: React.FC = () => {
           <div className="sideBar">
             <SideBar
               setContentsType={setContentsType}
+              setShowCards={setShowCards}
             />
           </div>
           <div className="contentsArea">
             <ContentsArea
+              setShowCards={setShowCards}
+              showCards={showCards}
               isEnglish={isEnglish}
               contentsType={contentsType}
             />

@@ -8,6 +8,7 @@ type contentType = 'algorithms' | 'react' | 'leetcode' | 'aws'
 
 type SideBarProps = {
   setContentsType: Dispatch<SetStateAction<contentType>>
+  setShowCards: Dispatch<SetStateAction<boolean>>
 }
 
 const SideBar: React.FC<SideBarProps> = (props) => {
@@ -18,6 +19,7 @@ const SideBar: React.FC<SideBarProps> = (props) => {
         <List>
           <Items
             setContentsType={props.setContentsType}
+            setShowCards={props.setShowCards}
           /> 
         </List>
       </Box>
