@@ -4,17 +4,13 @@ import Content from "./Content/Content"
 
 type ContentsAreaProps = {
   isEnglish: boolean
+  contentsType: 'algorithms' | 'react' | 'leetcode' | 'aws'
 }
 
 const ContentsArea: React.FC<ContentsAreaProps> = (props) => {
 
-  // @todo: 'contents' must be state value ([react,leetcode,aws, etc...]) with type def
-  // Temporary only 'react'
-  // const contents = require('../../contents/react.json')
-  // const contents = require('../../contents/aws.json')
-  const contents = require('../../contents/leetcode.json')
+  const contents = require(`../../contents/${props.contentsType}.json`)
 
-  
   // Get value of state showCards from local storage
   // Return true when local storage has nothing
   // @todo the codes must be in other file (Redux?)

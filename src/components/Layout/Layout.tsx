@@ -5,6 +5,8 @@ import CardArea from './CardArea/CardArea'
 import ContentsArea from "../ContentsArea/ContentsArea"
 import { MuiThemeProvider, createTheme } from '@material-ui/core/styles'
 
+type contentType = 'algorithms' | 'react' | 'leetcode' | 'aws'
+
 const Layout: React.FC = () => {
 
   const [isEnglish, setIsEnglish] = useState(() => {
@@ -14,6 +16,14 @@ const Layout: React.FC = () => {
   useEffect(() => {
     localStorage.setItem('isEnglish', JSON.stringify(isEnglish))
   }, [isEnglish])
+
+  const [contentsType, setContentsType] = useState(():contentType => {
+    const contentsType = localStorage.getItem('contentsType')
+    return JSON.parse(contentsType as string) ?? 'algorithms'
+  })
+  useEffect(() => {
+    localStorage.setItem('contentsType', JSON.stringify(contentsType))
+  }, [contentsType])
 
   return (
     <div className="App">
@@ -26,11 +36,14 @@ const Layout: React.FC = () => {
         </div>
         <div className="container">
           <div className="sideBar">
-            <SideBar />
+            <SideBar
+              setContentsType={setContentsType}
+            />
           </div>
           <div className="contentsArea">
             <ContentsArea
               isEnglish={isEnglish}
+              contentsType={contentsType}
             />
           </div>
           <div className="cardArea">
