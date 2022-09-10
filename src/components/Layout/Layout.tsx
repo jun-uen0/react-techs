@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import NavBar from './NavBar/NavBar'
 import SideBar from './SideBar/SideBar'
 import CardArea from './CardArea/CardArea'
-import ContentsArea from "../ContentsArea/ContentsArea"
+import ContentsArea from "./ContentsArea/ContentsArea"
 import { MuiThemeProvider, createTheme } from '@material-ui/core/styles'
 
 type contentType = 'algorithms' | 'react' | 'leetcode' | 'aws'

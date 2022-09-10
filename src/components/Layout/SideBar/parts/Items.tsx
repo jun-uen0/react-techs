@@ -1,11 +1,12 @@
-import makeStyles from '@material-ui/core/styles/makeStyles'
-import ListItem from '@material-ui/core/ListItem'
-import ListItemIcon from '@material-ui/core/ListItemIcon'
 import { Dispatch, SetStateAction } from 'react'
-import ListItemText from '@material-ui/core/ListItemText'
-import Button from '@material-ui/core/Button'
+import { useSearchParams } from 'react-router-dom'
+import makeStyles from '@material-ui/core/styles/makeStyles'
 import leetCodeLogo from '../../../../assets/leetcode_white.png'
 import reactLogo from '../../../../assets/react-logo-white_transparent.png'
+import ListItem from '@material-ui/core/ListItem'
+import ListItemIcon from '@material-ui/core/ListItemIcon'
+import ListItemText from '@material-ui/core/ListItemText'
+import Button from '@material-ui/core/Button'
 import Code from '@material-ui/icons/Code'
 import CloudQueue from '@material-ui/icons/CloudQueue'
 
@@ -19,6 +20,7 @@ type ItemsProps = {
 const Items: React.FC<ItemsProps> = (props) => {
 
   const classes = useStyles()
+  const [searchParams, setSearchParams] = useSearchParams()
 
   return (
     <>
@@ -29,6 +31,7 @@ const Items: React.FC<ItemsProps> = (props) => {
             console.log('Algorithms clicked')
             props.setContentsType('algorithms')
             props.setShowCards(true)
+            setSearchParams({item: 'algorithms'})
           }}
         >
           <ListItemIcon>
@@ -46,6 +49,7 @@ const Items: React.FC<ItemsProps> = (props) => {
             console.log('React clicked')
             props.setContentsType('react')
             props.setShowCards(true)
+            setSearchParams({item: 'react'})
           }}
         >
           <ListItemIcon>
@@ -66,6 +70,7 @@ const Items: React.FC<ItemsProps> = (props) => {
             console.log('LeetCode clicked')
             props.setContentsType('leetcode')
             props.setShowCards(true)
+            setSearchParams({item: 'leetcode'})
           }}
         >
           <ListItemIcon>
@@ -86,6 +91,7 @@ const Items: React.FC<ItemsProps> = (props) => {
             console.log('AWS clicked')
             props.setContentsType('aws')
             props.setShowCards(true)
+            setSearchParams({item: 'aws'})
           }}
         >
           <ListItemIcon>
