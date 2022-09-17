@@ -3,9 +3,9 @@ import NavBar from './NavBar/NavBar'
 import SideBar from './SideBar/SideBar'
 import CardArea from './CardArea/CardArea'
 import ContentsArea from "./ContentsArea/ContentsArea"
-import { MuiThemeProvider, createTheme } from '@material-ui/core/styles'
-
-type contentType = 'algorithms' | 'react' | 'leetcode' | 'aws'
+import { MuiThemeProvider } from '@material-ui/core/styles'
+import { contents } from '../types'
+import { theme } from '../theme'
 
 const Layout: React.FC = () => {
 
@@ -17,7 +17,7 @@ const Layout: React.FC = () => {
     localStorage.setItem('isEnglish', JSON.stringify(isEnglish))
   }, [isEnglish])
 
-  const [contentsType, setContentsType] = useState(():contentType => {
+  const [contentsType, setContentsType] = useState(():contents => {
     const contentsType = localStorage.getItem('contentsType')
     return JSON.parse(contentsType as string) ?? 'algorithms'
   })
@@ -65,22 +65,5 @@ const Layout: React.FC = () => {
     </div>
   )
 }
-
-// @todo: theme def must be different file
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#091c33'
-    },
-    secondary: {
-      main: '#ffffff'
-    },
-  },
-  typography: {
-    button: {
-      textTransform: 'none'
-    }
-  },
-})
 
 export default Layout

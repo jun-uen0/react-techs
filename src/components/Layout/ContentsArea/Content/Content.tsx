@@ -1,23 +1,10 @@
 import axios from "axios"
-import { useEffect, useState, Dispatch, SetStateAction } from "react"
+import { useEffect, useState } from "react"
 import { useSearchParams } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { xonokai } from 'react-syntax-highlighter/dist/esm/styles/prism'
-
-// @todo: date type must be other file 
-type contentType = {
-  title: string
-  path: string
-  description: string
-}
-
-// @todo in other file
-type ContentProps = {
-  setShowCards: Dispatch<SetStateAction<boolean>>
-  content: contentType
-  isEnglish: boolean
-}
+import { ContentProps } from '../../../types'
 
 const Content: React.FC<ContentProps> = (props) => {
 
