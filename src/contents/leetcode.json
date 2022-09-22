@@ -3,5 +3,15 @@
     "title": "58. Length of Last Word",
     "path": "articles/articles/leetcode/easy/00058_length-of-last-word",
     "description": "Easy problem, you can try out your new programming language with this problem."
+  },
+  {
+    "title": "1456. Maximum Number of Vowels in a Substring of Given Length",
+    "path": "articles/articles/leetcode/easy/01456_maximum-number-of-vowels-in-a-substring-of-given-length",
+    "description": "Easy problem, but you need to think a bit to make it faster."
+  },
+  {
+    "title": "69. Sqrt(x)",
+    "path": "articles/articles/leetcode/easy/00069_sqrtx",
+    "description": "Easy problem, but you need to run with time complexity of O(log n)."
   }
 ]
