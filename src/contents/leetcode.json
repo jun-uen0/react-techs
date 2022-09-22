@@ -11,7 +11,7 @@
   },
   {
     "title": "69. Sqrt(x)",
-    "path": "articles/articles/leetcode/easy/00069_Sqrt(x)",
-    "description": "Easy problem, but you need to think a bit to make it faster."
+    "path": "articles/articles/leetcode/easy/00069_sqrtx",
+    "description": "Easy problem, but you need to run with time complexity of O(log n)."
   }
 ]
