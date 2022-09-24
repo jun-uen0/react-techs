@@ -1,5 +1,20 @@
 [
   {
+    "title": "26. Remove Duplicates from Sorted Array",
+    "path": "articles/articles/leetcode/easy/00026_remove-duplicates-from-sorted-array",
+    "description": "【Easy】You can learn basic list/array operations from this problem."
+  },
+  {
+    "title": "29. Divide Two Integers",
+    "path": "articles/articles/leetcode/medium/00029_divide-two-integers",
+    "description": "【Medium】You need to run with time complexity of O(log n)."
+  },
+  {
+    "title": "69. Sqrt(x)",
+    "path": "articles/articles/leetcode/easy/00069_sqrtx",
+    "description": "【Easy】You need to run with time complexity of O(log n)."
+  },
+  {
     "title": "58. Length of Last Word",
     "path": "articles/articles/leetcode/easy/00058_length-of-last-word",
     "description": "【Easy】You can try out your new programming language with this problem."
@@ -8,15 +23,5 @@
     "title": "1456. Maximum Number of Vowels in a Substring of Given Length",
     "path": "articles/articles/leetcode/easy/01456_maximum-number-of-vowels-in-a-substring-of-given-length",
     "description": "【Easy】You need to think a bit to make it faster."
-  },
-  {
-    "title": "69. Sqrt(x)",
-    "path": "articles/articles/leetcode/easy/00069_sqrtx",
-    "description": "【Easy】You need to run with time complexity of O(log n)."
-  },
-  {
-    "title": "29. Divide Two Integers",
-    "path": "articles/articles/leetcode/medium/00029_divide-two-integers",
-    "description": "【Medium】You need to run with time complexity of O(log n)."
   }
 ]
