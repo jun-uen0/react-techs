@@ -20,6 +20,11 @@
     "description": "【Easy】You can try out your new programming language with this problem."
   },
   {
+    "title": "456. 132 Pattern",
+    "path": "articles/articles/leetcode/medium/00456_132-pattern",
+    "description": "【Medium】You need to run with time complexity of O(N)."
+  },
+  {
     "title": "1456. Maximum Number of Vowels in a Substring of Given Length",
     "path": "articles/articles/leetcode/easy/01456_maximum-number-of-vowels-in-a-substring-of-given-length",
     "description": "【Easy】You need to think a bit to make it faster."
