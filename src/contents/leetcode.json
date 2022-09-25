@@ -20,6 +20,11 @@
     "description": "【Easy】You can try out your new programming language with this problem."
   },
   {
+    "title": "349. Intersection of Two Arrays",
+    "path": "articles/articles/leetcode/easy/00349_intersection-of-two-arrays",
+    "description": "【Easy】You can solve this problem in just one line using set."
+  },
+  {
     "title": "456. 132 Pattern",
     "path": "articles/articles/leetcode/medium/00456_132-pattern",
     "description": "【Medium】You need to run with time complexity of O(N)."
