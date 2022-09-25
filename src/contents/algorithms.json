@@ -8,5 +8,10 @@
     "title": "Power",
     "path": "articles/articles/algorithms/power",
     "description": "Efficient power function using recursion"
+  },
+  {
+    "title": "Greatest Common Divisor",
+    "path": "articles/articles/algorithms/gcd",
+    "description": "Find GCD using recursion"
   }
 ]
