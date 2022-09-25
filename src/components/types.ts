@@ -8,6 +8,10 @@ export interface contentType {
   description: string
 }
 
+export interface MarkdownContentProps {
+  read: string
+}
+
 export interface ContentProps {
   setShowCards: Dispatch<SetStateAction<boolean>>
   content: contentType
@@ -30,4 +34,11 @@ export interface ContentCardsProps {
   setShowCards: Dispatch<SetStateAction<boolean>>
   setContentNumber: Dispatch<SetStateAction<number>>
   contents: Array<contentType>
+}
+
+export interface ContentsAreaProps {
+  setShowCards: Dispatch<SetStateAction<boolean>>
+  showCards: boolean
+  isEnglish: boolean
+  contentsType: 'algorithms' | 'react' | 'leetcode' | 'aws'
 }

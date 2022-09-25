@@ -1,11 +1,11 @@
-import makeStyles from '@material-ui/core/styles/makeStyles'
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 import Typography from '@material-ui/core/Typography'
 import profilePic from '../../../../assets/profile_with_round.png'
 import Sns from './Sns'
+import { useStyles } from '../../../theme'
 
-const ClippedDrawer: React.FC = () => {
+const Profile: React.FC = () => {
 
   const classes = useStyles()
 
@@ -45,16 +45,4 @@ const ClippedDrawer: React.FC = () => {
   )
 }
 
-const useStyles = makeStyles({
-  back: {
-    background: "#091c33",
-    color : '#ffffff',
-  },
-  learnMore: {
-    background: "#ffffff",
-    color : '#091c33',
-    margin: '10px',
-  },
-})
-
-export default ClippedDrawer
+export default Profile

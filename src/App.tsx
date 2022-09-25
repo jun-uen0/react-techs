@@ -6,7 +6,6 @@ import {
 } from 'react-router-dom';
 
 const App: React.FC = () => {
-
   return (
     <>
       <Router>

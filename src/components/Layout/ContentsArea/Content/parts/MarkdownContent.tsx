@@ -1,11 +1,7 @@
 import ReactMarkdown from 'react-markdown'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { xonokai } from 'react-syntax-highlighter/dist/esm/styles/prism'
-
-// @todo mv type declaration to types.ts
-type MarkdownContentProps = {
-  read: string
-}
+import { MarkdownContentProps } from './../../../../types'
 
 const MarkdownContent: React.FC<MarkdownContentProps> = (props) => {
   return (

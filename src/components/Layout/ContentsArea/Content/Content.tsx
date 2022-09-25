@@ -20,7 +20,7 @@ const Content: React.FC<ContentProps> = (props) => {
   return (
     <>
       <BackButton setShowCards={props.setShowCards} />
-      {read === '' ? <div>{noContent}</div> : <MarkdownContent read={read} />}
+        {read === '' ? <div>{noContent}</div> : <MarkdownContent read={read} />}
     </>
   )
 }

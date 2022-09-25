@@ -27,4 +27,7 @@ export const useStyles = makeStyles({
     color : '#091c33',
     margin: '10px',
   },
+  text: {
+    color: '#ffffff',
+  },
 })

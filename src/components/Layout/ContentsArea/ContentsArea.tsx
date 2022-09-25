@@ -1,14 +1,7 @@
-import { useEffect, useState, Dispatch, SetStateAction } from "react"
+import { useEffect, useState } from "react"
 import ContentCards from "./ContentCards/ContentCards"
 import Content from "./Content/Content"
-
-// @todo mv type declaration to types.ts
-type ContentsAreaProps = {
-  setShowCards: Dispatch<SetStateAction<boolean>>
-  showCards: boolean
-  isEnglish: boolean
-  contentsType: 'algorithms' | 'react' | 'leetcode' | 'aws'
-}
+import { ContentsAreaProps } from "../../types"
 
 const ContentsArea: React.FC<ContentsAreaProps> = (props) => {
 
@@ -18,6 +11,7 @@ const ContentsArea: React.FC<ContentsAreaProps> = (props) => {
     const contentNumber = localStorage.getItem('contentNumber')
     return JSON.parse(contentNumber as string) as number ?? -1
   })
+
   useEffect(() => {
     localStorage.setItem('contentNumber', JSON.stringify(contentNumber))
   }, [contentNumber])
@@ -34,7 +28,8 @@ const ContentsArea: React.FC<ContentsAreaProps> = (props) => {
           setShowCards={props.setShowCards}
           content={contents[contentNumber]}
           isEnglish={props.isEnglish}
-        />}
+        />
+      }
     </>
   )
 }

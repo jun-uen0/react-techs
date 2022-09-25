@@ -1,6 +1,5 @@
 import { Dispatch, SetStateAction } from 'react'
 import { useSearchParams } from 'react-router-dom'
-import makeStyles from '@material-ui/core/styles/makeStyles'
 import leetCodeLogo from '../../../../assets/leetcode_white.png'
 import reactLogo from '../../../../assets/react-logo-white_transparent.png'
 import ListItem from '@material-ui/core/ListItem'
@@ -9,9 +8,11 @@ import ListItemText from '@material-ui/core/ListItemText'
 import Button from '@material-ui/core/Button'
 import Code from '@material-ui/icons/Code'
 import CloudQueue from '@material-ui/icons/CloudQueue'
+import { useStyles } from '../../../theme'
 
+
+// @todo mv to types.ts
 type contentType = 'algorithms' | 'react' | 'leetcode' | 'aws'
-
 type ItemsProps = {
   setContentsType: Dispatch<SetStateAction<contentType>>
   setShowCards: Dispatch<SetStateAction<boolean>>
@@ -105,11 +106,5 @@ const Items: React.FC<ItemsProps> = (props) => {
     </>
   )
 }
-
-const useStyles = makeStyles({
-  text: {
-    color: '#ffffff',
-  },
-})
 
 export default Items
