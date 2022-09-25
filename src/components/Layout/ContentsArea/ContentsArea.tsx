@@ -2,6 +2,7 @@ import { useEffect, useState, Dispatch, SetStateAction } from "react"
 import ContentCards from "./ContentCards/ContentCards"
 import Content from "./Content/Content"
 
+// @todo mv type declaration to types.ts
 type ContentsAreaProps = {
   setShowCards: Dispatch<SetStateAction<boolean>>
   showCards: boolean

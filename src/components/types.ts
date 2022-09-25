@@ -14,6 +14,10 @@ export interface ContentProps {
   isEnglish: boolean
 }
 
+export interface BackButtontProps {
+  setShowCards: Dispatch<SetStateAction<boolean>>
+}
+
 export interface ContentCardProps {
   setShowCards: Dispatch<SetStateAction<boolean>>
   setContentNumber: Dispatch<SetStateAction<number>>

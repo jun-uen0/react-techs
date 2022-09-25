@@ -1,75 +1,26 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { useSearchParams } from 'react-router-dom'
-import ReactMarkdown from 'react-markdown'
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { xonokai } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import { ContentProps } from '../../../types'
+import MarkdownContent from './parts/MarkdownContent'
+import BackButton from './parts/BackButton'
+import convertPath from './parts/convertPath'
 
 const Content: React.FC<ContentProps> = (props) => {
-
-  const splitedPath = (props.content.path).split('/')
-  const fileName = splitedPath[splitedPath.length -1] // file name is as directory name + '_' + language
-  splitedPath.splice(1,0,'main') // Add branch name after repogitory name
-  const pathWithBranch = splitedPath.join('/') // Put together them again
-
-  const language = () => {
-    if (props.isEnglish) return 'en'
-    return 'jp'
-  }
-  
-  // Get the contents of the markdown file from GitHub
-  const url = `https://raw.githubusercontent.com/jun-uen0/${pathWithBranch}/${fileName}_${language()}.md`
-
+  const language = () => props.isEnglish ? 'en' : 'jp'
+  const noContent = (<h3>This page is not available in {language()}.</h3>)
   const [read, setRead] = useState('')
-  const [searchParams, setSearchParams] = useSearchParams()
-
-  useEffect(() => {
-    setSearchParams({content:`${fileName}_${language()}`})
-  }, [[],props.isEnglish])
+  const url =`https://raw.githubusercontent.com/jun-uen0/${convertPath(props.content.path)}_${language()}.md`
 
   useEffect(() => {
     axios.get(url)
-    .then((res) => {
-      setRead(res.data);
-    })
-    .catch((err) => {
-      console.log('Error occured when fetching markdown data' + err)
-    })
+    .then((res) => {setRead(res.data)})
+    .catch(() => {setRead('')})
   }, [props.isEnglish])
 
   return (
     <>
-      <button
-        onClick={() => {
-          props.setShowCards(true)
-        }}
-      >
-        ← Back
-      </button>
-      <div className="content">
-        <ReactMarkdown
-          children={read}
-          components={{
-            code({inline, className, children}) {
-              const match = /language-(\w+)/.exec(className || '')
-              // If text is inline, use the inline language
-              return !inline && match ? (
-                <SyntaxHighlighter
-                  children={String(children).replace(/\n$/, '')}
-                  style={xonokai as any}
-                  language={match[1]}
-                  PreTag="div"
-                />
-                // If text is not inline, use the markdown language
-                ) : (
-                  <code className={className}>
-                </code>
-              )
-            }
-          }}
-        />
-      </div>
+      <BackButton setShowCards={props.setShowCards} />
+      {read === '' ? <div>{noContent}</div> : <MarkdownContent read={read} />}
     </>
   )
 }
