@@ -2,6 +2,7 @@ import { Dispatch, SetStateAction } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import leetCodeLogo from '../../../../assets/leetcode_white.png'
 import reactLogo from '../../../../assets/react-logo-white_transparent.png'
+import rustLogo from '../../../../assets/rust-logo-white.png'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
@@ -9,16 +10,9 @@ import Button from '@material-ui/core/Button'
 import Code from '@material-ui/icons/Code'
 import CloudQueue from '@material-ui/icons/CloudQueue'
 import { useStyles } from '../../../theme'
+import { SideBarProps } from '../../../types'
 
-
-// @todo mv to types.ts
-type contentType = 'algorithms' | 'react' | 'leetcode' | 'aws'
-type ItemsProps = {
-  setContentsType: Dispatch<SetStateAction<contentType>>
-  setShowCards: Dispatch<SetStateAction<boolean>>
-}
-
-const Items: React.FC<ItemsProps> = (props) => {
+const Items: React.FC<SideBarProps> = (props) => {
 
   const classes = useStyles()
   const [searchParams, setSearchParams] = useSearchParams()
@@ -101,6 +95,27 @@ const Items: React.FC<ItemsProps> = (props) => {
             />
           </ListItemIcon>
           <ListItemText primary={'AWS'} />
+        </Button>
+      </ListItem>
+      <ListItem key={'Rust'}>
+        <Button 
+          classes={{ text: classes.text }}
+          onClick={() => {
+            console.log('Rust clicked')
+            props.setContentsType('rust')
+            props.setShowCards(true)
+            setSearchParams({item: 'rust'})
+          }}
+        >
+          <ListItemIcon>
+          <img
+              src={rustLogo}
+              alt='Rust logo'
+              height={'25px'}
+              width={'25px'}
+            />
+          </ListItemIcon>
+          <ListItemText primary={'Rust'} />
         </Button>
       </ListItem>
     </>

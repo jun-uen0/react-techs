@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from "react"
 
-export type contents = 'algorithms' | 'react' | 'leetcode' | 'aws'
+export type contents = 'algorithms' | 'react' | 'leetcode' | 'aws' | 'rust'
 
 export interface contentType {
   title: string
@@ -40,5 +40,10 @@ export interface ContentsAreaProps {
   setShowCards: Dispatch<SetStateAction<boolean>>
   showCards: boolean
   isEnglish: boolean
-  contentsType: 'algorithms' | 'react' | 'leetcode' | 'aws'
+  contentsType: contents
+}
+
+export interface SideBarProps {
+  setContentsType: Dispatch<SetStateAction<contents>>
+  setShowCards: Dispatch<SetStateAction<boolean>>
 }
