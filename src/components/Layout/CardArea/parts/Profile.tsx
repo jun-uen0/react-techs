@@ -14,7 +14,8 @@ const Profile: React.FC = () => {
       <Card className={classes.back}>
         <CardContent>
           <Typography>
-            <img 
+            <img
+              alt='profile'
               src={profilePic}
               style={{
                 width: 150,
@@ -27,15 +28,22 @@ const Profile: React.FC = () => {
           <Typography variant="h5" component="div">
             Jun Ueno
           </Typography>
+          <Typography>
+            Web Developer
+          </Typography>
           <span style={{ marginLeft: 16}} />
           <Sns />
           <Typography>
             <br />
-            Web Software Developer / Project Manager
+            #JS #TS #Python #React #Vue #Bash
+            <br />
+            #AWS #GCP #Firebae #DevOps #Docker #API
           </Typography>
           <span style={{ marginLeft: 16}} />
           <Typography variant="body2">
-            "If you feel like the dumbest person in the room then you're in the correct room."
+            "If you feel like the dumbest person in the room,
+            <br />
+            you're in the correct room."
           </Typography>
         </CardContent>
         <span style={{ marginLeft: 16}} />
