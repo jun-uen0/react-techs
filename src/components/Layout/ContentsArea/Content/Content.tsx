@@ -4,6 +4,7 @@ import { ContentProps } from '../../../types'
 import MarkdownContent from './parts/MarkdownContent'
 import BackButton from './parts/BackButton'
 import convertPath from './parts/convertPath'
+import RadixConversion from '../Original/RadixConversion'
 
 const Content: React.FC<ContentProps> = (props) => {
   const language = () => props.isEnglish ? 'en' : 'jp'
@@ -17,10 +18,20 @@ const Content: React.FC<ContentProps> = (props) => {
     .catch(() => {setRead('')})
   }, [props.isEnglish])
 
+  const showNomal = () => {
+    return read === '' ? <div>{noContent}</div> : <MarkdownContent read={read} />
+  }
+  const showOriginal = (item: string) => {
+    return item === "math" ? <RadixConversion /> : <RadixConversion />
+  }
+
   return (
     <>
       <BackButton setShowCards={props.setShowCards} />
-        {read === '' ? <div>{noContent}</div> : <MarkdownContent read={read} />}
+      {props.content.original
+        ? showOriginal(props.content.original)
+        : showNomal()
+      }
     </>
   )
 }

@@ -1,11 +1,12 @@
 import { Dispatch, SetStateAction } from "react"
 
-export type contents = 'algorithms' | 'react' | 'leetcode' | 'aws' | 'rust'
+export type contents = 'algorithms' | 'react' | 'leetcode' | 'aws' | 'rust' | 'math'
 
 export interface contentType {
   title: string
   path: string
   description: string
+  original?: string
 }
 
 export interface MarkdownContentProps {

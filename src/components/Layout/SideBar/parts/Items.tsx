@@ -1,8 +1,8 @@
-import { Dispatch, SetStateAction } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import leetCodeLogo from '../../../../assets/leetcode_white.png'
 import reactLogo from '../../../../assets/react-logo-white_transparent.png'
 import rustLogo from '../../../../assets/rust-logo-white.png'
+import sigma from '../../../../assets/sigma-white.png'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
@@ -20,7 +20,7 @@ const Items: React.FC<SideBarProps> = (props) => {
   return (
     <>
       <ListItem key={'Algorithms'}>
-        <Button 
+        <Button
           classes={{ text: classes.text }}
           onClick={() => {
             console.log('Algorithms clicked')
@@ -38,7 +38,7 @@ const Items: React.FC<SideBarProps> = (props) => {
         </Button>
       </ListItem>
       <ListItem key={'React'}>
-        <Button 
+        <Button
           classes={{ text: classes.text }}
           onClick={() => {
             console.log('React clicked')
@@ -59,7 +59,7 @@ const Items: React.FC<SideBarProps> = (props) => {
         </Button>
       </ListItem>
       <ListItem key={'LeetCode'}>
-        <Button 
+        <Button
           classes={{ text: classes.text }}
           onClick={() => {
             console.log('LeetCode clicked')
@@ -80,7 +80,7 @@ const Items: React.FC<SideBarProps> = (props) => {
         </Button>
       </ListItem>
       <ListItem key={'AWS'}>
-        <Button 
+        <Button
           classes={{ text: classes.text }}
           onClick={() => {
             console.log('AWS clicked')
@@ -90,7 +90,7 @@ const Items: React.FC<SideBarProps> = (props) => {
           }}
         >
           <ListItemIcon>
-            <CloudQueue 
+            <CloudQueue
               color='secondary'
             />
           </ListItemIcon>
@@ -98,7 +98,7 @@ const Items: React.FC<SideBarProps> = (props) => {
         </Button>
       </ListItem>
       <ListItem key={'Rust'}>
-        <Button 
+        <Button
           classes={{ text: classes.text }}
           onClick={() => {
             console.log('Rust clicked')
@@ -116,6 +116,27 @@ const Items: React.FC<SideBarProps> = (props) => {
             />
           </ListItemIcon>
           <ListItemText primary={'Rust'} />
+        </Button>
+      </ListItem>
+      <ListItem key={'Math'}>
+        <Button
+          classes={{ text: classes.text }}
+          onClick={() => {
+            console.log('Math clicked')
+            props.setContentsType('math')
+            props.setShowCards(true)
+            setSearchParams({item: 'math'})
+          }}
+        >
+          <ListItemIcon>
+          <img
+              src={sigma}
+              alt='Math logo'
+              height={'25px'}
+              width={'25px'}
+            />
+          </ListItemIcon>
+          <ListItemText primary={'Math'} />
         </Button>
       </ListItem>
     </>
