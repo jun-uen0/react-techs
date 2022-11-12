@@ -23,7 +23,7 @@ const ContentCard: React.FC<ContentCardProps> = (props) => {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button 
+          <Button
             classes={{ text: classes.learnMore }}
             onClick={() => {
               props.setShowCards(false)

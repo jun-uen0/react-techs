@@ -18,7 +18,7 @@ const ContentsArea: React.FC<ContentsAreaProps> = (props) => {
 
   return (
     <>
-      {props.showCards 
+      {props.showCards
       ? <ContentCards
           setShowCards={props.setShowCards}
           setContentNumber={setContentNumber}

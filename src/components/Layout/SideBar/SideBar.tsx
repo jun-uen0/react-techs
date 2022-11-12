@@ -13,7 +13,7 @@ const SideBar: React.FC<SideBarProps> = (props) => {
           <Items
             setContentsType={props.setContentsType}
             setShowCards={props.setShowCards}
-          /> 
+          />
         </List>
       </Box>
     </>
