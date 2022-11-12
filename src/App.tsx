@@ -19,18 +19,6 @@ const formatCardNumber = (value: string) => {
 const App: React.FC = () => {
   return (
     <>
-    <input
-      type="number"
-      onChange={(e) => {
-        console.log(e.target.value)
-      }}
-    >
-    </input>
-    <button>
-      button
-    </button>
-
-
       <Router>
         <Routes>
           <Route path='/' element={< Layout />}></Route>
