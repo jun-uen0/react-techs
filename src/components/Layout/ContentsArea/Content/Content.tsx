@@ -4,7 +4,7 @@ import { ContentProps } from '../../../types'
 import MarkdownContent from './parts/MarkdownContent'
 import BackButton from './parts/BackButton'
 import convertPath from './parts/convertPath'
-import RadixConversion from '../Original/RadixConversion'
+import RadixConversion from '../Original/Math/RadixConversion'
 
 const Content: React.FC<ContentProps> = (props) => {
   const language = () => props.isEnglish ? 'en' : 'jp'
