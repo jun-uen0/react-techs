@@ -1,5 +1,7 @@
 import React from 'react'
-// import OtherRadixToDecimal from './parts/OtherRadixToDecimal'
+import Box from '@material-ui/core/Box'
+import Container from '@material-ui/core/Container';
+import OtherRadixToDecimal from './parts/OtherRadixToDecimal'
 import DecimalToOtherRadix from './parts/DecimalToOtherRadix'
 
 const RadixConversion: React.FC = () => {
@@ -8,8 +10,19 @@ const RadixConversion: React.FC = () => {
     <>
       <h3>Radix conversion</h3>
       <p>This simple application will convert any types of cardinal number into decimal number</p>
-      {/* <OtherRadixToDecimal /> */}
-      <DecimalToOtherRadix />
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'flex-start'
+        }}
+      >
+        <Container>
+          <OtherRadixToDecimal />
+        </Container>
+        <Container>
+          <DecimalToOtherRadix />
+        </Container>
+      </Box>
     </>
   )
 }
