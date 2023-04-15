@@ -35,15 +35,15 @@ const Profile: React.FC = () => {
           <Sns />
           <Typography>
             <br />
-            #JS #TS #Python #React #Vue #Bash
+            #TypeScript #Python #React #Shell Script
             <br />
-            #AWS #GCP #Firebae #DevOps #Docker #API
+            #AWS #DevOps #Docker #CI/CD
           </Typography>
           <span style={{ marginLeft: 16}} />
           <Typography variant="body2">
             "If you feel like the dumbest person in the room,
             <br />
-            you're in the correct room."
+            you're in the right room."
           </Typography>
         </CardContent>
         <span style={{ marginLeft: 16}} />
