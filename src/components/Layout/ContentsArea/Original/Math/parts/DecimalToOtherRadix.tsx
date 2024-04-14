@@ -34,6 +34,12 @@ const DecimalToOtherRadix: React.FC = () => {
             helperText="Only number is accepted"
             value={radix}
             onChange={e => setRadix(e.target.value)}
+            InputProps={{
+              style: { color: 'white' },
+              inputProps: { style: { borderBottom: '1px solid white' } }
+            }}
+            InputLabelProps={{ style: { color: 'white' } }}
+            FormHelperTextProps={{ style: { color: 'white' } }}
           />
         </div>
       </Box>
@@ -45,6 +51,12 @@ const DecimalToOtherRadix: React.FC = () => {
             helperText="Only number is accepted"
             value={input}
             onChange={e => setInput(e.target.value)}
+            InputProps={{
+              style: { color: 'white' },
+              inputProps: { style: { borderBottom: '1px solid white' } }
+            }}
+            InputLabelProps={{ style: { color: 'white' } }}
+            FormHelperTextProps={{ style: { color: 'white' } }}
           />
         </div>
       </Box>
@@ -58,6 +70,12 @@ const DecimalToOtherRadix: React.FC = () => {
           <TextField
             label="Result"
             value={output}
+            InputProps={{
+              style: { color: 'white' },
+              inputProps: { style: { borderBottom: '1px solid white' } }
+            }}
+            InputLabelProps={{ style: { color: 'white' } }}
+            FormHelperTextProps={{ style: { color: 'white' } }}
           />
         </div>
       </Box>

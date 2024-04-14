@@ -8,8 +8,9 @@ const RadixConversion: React.FC = () => {
 
   return (
     <>
-      <h3>Radix conversion</h3>
-      <p>This simple application will convert any types of cardinal number into decimal number</p>
+      <h3 style={{color: 'white'}}>Radix conversion</h3>
+      <p style={{color: 'white'}}>※ English only</p>
+      <p style={{color: 'white'}}>This simple application will convert any types of cardinal number into decimal number</p>
       <Box
         sx={{
           display: 'flex',

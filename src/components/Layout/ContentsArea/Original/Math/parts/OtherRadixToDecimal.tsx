@@ -10,12 +10,12 @@ const OtherRadixToDecimal: React.FC = () => {
   const [cardinal, setCardinal] = React.useState('2')
 
   // @todo: Need Validation for number
-  const cardinalToDecimal = (num:string,cardinal:string) => {
+  const cardinalToDecimal = (num: string, cardinal: string) => {
     const prepCulc = num.split("").map(Number).reverse()
-    const result = prepCulc.map((x,i) => {
+    const result = prepCulc.map((x, i) => {
       return i === 0 ? x * 1 : x * Number(cardinal) ** i
     })
-    setOutput(Number(result.reduce((p,c) => p + c)))
+    setOutput(Number(result.reduce((p, c) => p + c)))
   }
 
   return (
@@ -28,6 +28,12 @@ const OtherRadixToDecimal: React.FC = () => {
             helperText="Only number is accepted"
             value={cardinal}
             onChange={e => setCardinal(e.target.value)}
+            InputProps={{
+              style: { color: 'white' },
+              inputProps: { style: { borderBottom: '1px solid white' } }
+            }}
+            InputLabelProps={{ style: { color: 'white' } }}
+            FormHelperTextProps={{ style: { color: 'white' } }}
           />
         </div>
       </Box>
@@ -39,12 +45,18 @@ const OtherRadixToDecimal: React.FC = () => {
             helperText="Only number is accepted"
             value={input}
             onChange={e => setInput(e.target.value)}
+            InputProps={{
+              style: { color: 'white' },
+              inputProps: { style: { borderBottom: '1px solid white' } }
+            }}
+            InputLabelProps={{ style: { color: 'white' } }}
+            FormHelperTextProps={{ style: { color: 'white' } }}
           />
         </div>
       </Box>
       <Box sx={{ mt: 2 }} >
         <Button variant="contained" onClick={() => {
-          cardinalToDecimal(input,cardinal)
+          cardinalToDecimal(input, cardinal)
         }}>Conversion</Button>
       </Box>
       <Box sx={{ mt: 2 }} >
@@ -52,6 +64,12 @@ const OtherRadixToDecimal: React.FC = () => {
           <TextField
             label="Result"
             value={output}
+            InputProps={{
+              style: { color: 'white' },
+              inputProps: { style: { borderBottom: '1px solid white' } }
+            }}
+            InputLabelProps={{ style: { color: 'white' } }}
+            FormHelperTextProps={{ style: { color: 'white' } }}
           />
         </div>
       </Box>
