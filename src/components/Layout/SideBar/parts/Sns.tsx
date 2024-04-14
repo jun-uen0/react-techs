@@ -10,7 +10,7 @@ const SNS = () => {
     <>
       <Grid container justifyContent="center">
         <Button
-          href="https://twitter.com/jun_uen0"
+          href="https://x.com/jun___dev"
           target="_blank"
           color="secondary"
         >
