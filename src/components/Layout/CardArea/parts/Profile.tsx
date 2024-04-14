@@ -24,14 +24,14 @@ const Profile: React.FC = () => {
               }}
             />
           </Typography>
-          <span style={{ marginLeft: 16}} />
+          <span style={{ marginLeft: 16 }} />
           <Typography variant="h5" component="div">
             Jun Ueno
           </Typography>
           <Typography>
-            Cloud Architec
+            Cloud Architect
           </Typography>
-          <span style={{ marginLeft: 16}} />
+          <span style={{ marginLeft: 16 }} />
           <Sns />
           <Typography>
             <br />
@@ -39,16 +39,16 @@ const Profile: React.FC = () => {
             <br />
             #AWS #DevOps #Docker
           </Typography>
-          <span style={{ marginLeft: 16}} />
+          <span style={{ marginLeft: 16 }} />
           <Typography variant="body2">
             "If you feel like the dumbest person in the room,
             <br />
             you're in the right room."
           </Typography>
         </CardContent>
-        <span style={{ marginLeft: 16}} />
+        <span style={{ marginLeft: 16 }} />
       </Card>
-      <span style={{ marginLeft: 16}} />
+      <span style={{ marginLeft: 16 }} />
     </>
   )
 }
