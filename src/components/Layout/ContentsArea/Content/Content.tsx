@@ -7,7 +7,7 @@ import convertPath from './parts/convertPath'
 import RadixConversion from '../Original/Math/RadixConversion'
 
 const Content: React.FC<ContentProps> = (props) => {
-  const language = () => props.isEnglish ? 'en' : 'jp'
+  const language = () => props.isEnglish ? 'jp' : 'en'
   const noContent = (<h3>This page is not available in {language()}.</h3>)
   const [read, setRead] = useState('')
   const url =`https://raw.githubusercontent.com/jun-uen0/${convertPath(props.content.path)}_${language()}.md`
