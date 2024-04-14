@@ -29,15 +29,15 @@ const Profile: React.FC = () => {
             Jun Ueno
           </Typography>
           <Typography>
-            Web Developer
+            Cloud Architec
           </Typography>
           <span style={{ marginLeft: 16}} />
           <Sns />
           <Typography>
             <br />
-            #TypeScript #Python #React #Shell Script
+            #Python #Shell Script
             <br />
-            #AWS #DevOps #Docker #CI/CD
+            #AWS #DevOps #Docker
           </Typography>
           <span style={{ marginLeft: 16}} />
           <Typography variant="body2">
