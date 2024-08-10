@@ -3,6 +3,7 @@ import leetCodeLogo from '../../../../assets/leetcode_white.png'
 import reactLogo from '../../../../assets/react-logo-white_transparent.png'
 import rustLogo from '../../../../assets/rust-logo-white.png'
 import sigma from '../../../../assets/sigma-white.png'
+import LPICLogo from '../../../../assets/lpic_grayscale.png'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
@@ -137,6 +138,27 @@ const Items: React.FC<SideBarProps> = (props) => {
             />
           </ListItemIcon>
           <ListItemText primary={'Math'} />
+        </Button>
+      </ListItem>
+      <ListItem key={'LPIC'}>
+        <Button
+          classes={{ text: classes.text }}
+          onClick={() => {
+            console.log('LPIC clicked')
+            props.setContentsType('lpic')
+            props.setShowCards(true)
+            setSearchParams({ item: 'lpic' })
+          }}
+        >
+          <ListItemIcon>
+            <img
+              src={LPICLogo}
+              alt='LPIC logo'
+              height={'25px'}
+              width={'25px'}
+            />
+          </ListItemIcon>
+          <ListItemText primary={'LPIC'} />
         </Button>
       </ListItem>
     </>
