@@ -35,9 +35,7 @@ const Profile: React.FC = () => {
           <Sns />
           <Typography>
             <br />
-            #Python #Shell Script
-            <br />
-            #AWS #DevOps #Docker
+            #AWS #DevOps
           </Typography>
           <span style={{ marginLeft: 16 }} />
           <Typography variant="body2">
