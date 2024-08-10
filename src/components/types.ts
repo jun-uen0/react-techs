@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from "react"
 
-export type contents = 'algorithms' | 'react' | 'leetcode' | 'aws' | 'rust' | 'math'
+export type contents = 'algorithms' | 'react' | 'leetcode' | 'aws' | 'rust' | 'math' | 'lpic'
 
 export interface contentType {
   title: string
