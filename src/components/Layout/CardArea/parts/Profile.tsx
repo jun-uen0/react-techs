@@ -29,13 +29,13 @@ const Profile: React.FC = () => {
             Jumpei Ueno
           </Typography>
           <Typography>
-            Cloud Architect
+            DevOps Enginner
           </Typography>
           <span style={{ marginLeft: 16 }} />
           <Sns />
           <Typography>
             <br />
-            #AWS #DevOps
+            #DevOps #AWS
           </Typography>
           <span style={{ marginLeft: 16 }} />
           <Typography variant="body2">
