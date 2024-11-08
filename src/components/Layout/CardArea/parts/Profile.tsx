@@ -26,7 +26,7 @@ const Profile: React.FC = () => {
           </Typography>
           <span style={{ marginLeft: 16 }} />
           <Typography variant="h5" component="div">
-            Jun Ueno
+            Jumpei Ueno
           </Typography>
           <Typography>
             Cloud Architect
