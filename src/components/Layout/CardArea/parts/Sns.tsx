@@ -6,18 +6,19 @@ import LinkedIn from '@material-ui/icons/LinkedIn'
 
 const SnsList = [<Twitter />, <GitHub />, <LinkedIn />]
 
+// Disable Twitter
 const SNS = () => {
 
   return (
     <>
       <Grid container justifyContent="center">
-        <Button
+        {/* <Button
           href="https://twitter.com/jun_uen0"
           target="_blank"
           color="secondary"
         >
           {SnsList[0]}
-        </Button>
+        </Button> */}
         <Button
           href="https://github.com/jun-uen0"
           target="_blank"
