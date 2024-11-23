@@ -8,6 +8,7 @@ import AppBar from '@material-ui/core/AppBar'
 type NavBarProps = {
   isEnglish: boolean
   setIsEnglish: Dispatch<SetStateAction<boolean>>
+  isMobile: boolean
 }
 
 const NavBar: React.FC<NavBarProps> = (props) => {

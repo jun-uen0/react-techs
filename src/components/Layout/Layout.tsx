@@ -6,8 +6,10 @@ import ContentsArea from "./ContentsArea/ContentsArea"
 import { MuiThemeProvider } from '@material-ui/core/styles'
 import { contents } from '../types'
 import { theme } from '../theme'
+import useMediaQuery from '@material-ui/core/useMediaQuery'
 
 const Layout: React.FC = () => {
+  const isMobile = useMediaQuery('(max-width: 768px)')
 
   const [isEnglish, setIsEnglish] = useState(() => {
     const isEnglish = localStorage.getItem('isEnglish')
@@ -40,15 +42,18 @@ const Layout: React.FC = () => {
           <NavBar
             isEnglish={isEnglish}
             setIsEnglish={setIsEnglish}
+            isMobile={isMobile}
           />
         </div>
         <div className="container">
-          <div className="sideBar">
-            <SideBar
-              setContentsType={setContentsType}
-              setShowCards={setShowCards}
-            />
-          </div>
+          {!isMobile && (
+            <div className="sideBar">
+              <SideBar
+                setContentsType={setContentsType}
+                setShowCards={setShowCards}
+              />
+            </div>
+          )}
           <div className="contentsArea">
             <ContentsArea
               setShowCards={setShowCards}
@@ -65,5 +70,4 @@ const Layout: React.FC = () => {
     </div>
   )
 }
-
 export default Layout
