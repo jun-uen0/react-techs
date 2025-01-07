@@ -1,7 +1,7 @@
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 import Typography from '@material-ui/core/Typography'
-import profilePic from '../../../../assets/profile_with_round.png'
+import profilePic from '../../../../assets/profile_jun-tech-jpn.png'
 import Sns from './Sns'
 import { useStyles } from '../../../theme'
 
