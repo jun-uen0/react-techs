@@ -40,7 +40,6 @@ const Profile: React.FC = () => {
           <span style={{ marginLeft: 16 }} />
           <Typography variant="body2">
             "If you feel like the dumbest person in the room,
-            <br />
             you're in the right room."
           </Typography>
         </CardContent>
