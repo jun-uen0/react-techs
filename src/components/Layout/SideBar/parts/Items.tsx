@@ -38,27 +38,6 @@ const Items: React.FC<SideBarProps> = (props) => {
           <ListItemText primary={'Algorithms'} />
         </Button>
       </ListItem>
-      <ListItem key={'React'}>
-        <Button
-          classes={{ text: classes.text }}
-          onClick={() => {
-            console.log('React clicked')
-            props.setContentsType('react')
-            props.setShowCards(true)
-            setSearchParams({item: 'react'})
-          }}
-        >
-          <ListItemIcon>
-            <img
-              src={reactLogo}
-              alt='React logo'
-              height={'25px'}
-              width={'25px'}
-            />
-          </ListItemIcon>
-          <ListItemText primary={'React'} />
-        </Button>
-      </ListItem>
       <ListItem key={'LeetCode'}>
         <Button
           classes={{ text: classes.text }}
@@ -96,69 +75,6 @@ const Items: React.FC<SideBarProps> = (props) => {
             />
           </ListItemIcon>
           <ListItemText primary={'AWS'} />
-        </Button>
-      </ListItem>
-      <ListItem key={'Rust'}>
-        <Button
-          classes={{ text: classes.text }}
-          onClick={() => {
-            console.log('Rust clicked')
-            props.setContentsType('rust')
-            props.setShowCards(true)
-            setSearchParams({item: 'rust'})
-          }}
-        >
-          <ListItemIcon>
-          <img
-              src={rustLogo}
-              alt='Rust logo'
-              height={'25px'}
-              width={'25px'}
-            />
-          </ListItemIcon>
-          <ListItemText primary={'Rust'} />
-        </Button>
-      </ListItem>
-      <ListItem key={'Math'}>
-        <Button
-          classes={{ text: classes.text }}
-          onClick={() => {
-            console.log('Math clicked')
-            props.setContentsType('math')
-            props.setShowCards(true)
-            setSearchParams({item: 'math'})
-          }}
-        >
-          <ListItemIcon>
-          <img
-              src={sigma}
-              alt='Math logo'
-              height={'25px'}
-              width={'25px'}
-            />
-          </ListItemIcon>
-          <ListItemText primary={'Math'} />
-        </Button>
-      </ListItem>
-      <ListItem key={'LPIC'}>
-        <Button
-          classes={{ text: classes.text }}
-          onClick={() => {
-            console.log('LPIC clicked')
-            props.setContentsType('lpic')
-            props.setShowCards(true)
-            setSearchParams({ item: 'lpic' })
-          }}
-        >
-          <ListItemIcon>
-            <img
-              src={LPICLogo}
-              alt='LPIC logo'
-              height={'25px'}
-              width={'25px'}
-            />
-          </ListItemIcon>
-          <ListItemText primary={'LPIC'} />
         </Button>
       </ListItem>
     </>

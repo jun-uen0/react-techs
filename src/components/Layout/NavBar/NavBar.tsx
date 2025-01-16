@@ -23,8 +23,8 @@ const NavBar: React.FC<NavBarProps> = (props) => {
           <Language
            isEnglish={props.isEnglish}
            setIsEnglish={props.setIsEnglish}
-          />
-          {props.isEnglish ? <p>en</p> : <p>jp</p>}
+           />
+           {props.isEnglish ? <p>English</p> : <p>日本語</p>}
         </Toolbar>
       </AppBar>
     </div>
