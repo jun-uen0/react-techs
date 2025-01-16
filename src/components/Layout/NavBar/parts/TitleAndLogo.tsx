@@ -30,6 +30,7 @@ const TitleAndlogo: React.FC = () => {
 const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
+    textAlign: 'center'
   },
 }))
 

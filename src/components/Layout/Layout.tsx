@@ -54,6 +54,12 @@ const Layout: React.FC = () => {
               />
             </div>
           )}
+          {isMobile && (
+            <SideBar
+              setContentsType={setContentsType}
+              setShowCards={setShowCards}
+            />
+          )}
           <div className="contentsArea">
             <ContentsArea
               setShowCards={setShowCards}
