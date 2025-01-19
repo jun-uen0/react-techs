@@ -1,9 +1,5 @@
 import { useSearchParams } from 'react-router-dom'
-import leetCodeLogo from '../../../../assets/leetcode_white.png'
-import reactLogo from '../../../../assets/react-logo-white_transparent.png'
-import rustLogo from '../../../../assets/rust-logo-white.png'
-import sigma from '../../../../assets/sigma-white.png'
-import LPICLogo from '../../../../assets/lpic_grayscale.png'
+import leetCodeLogo from '../../../../assets/leetcode_black.png'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
@@ -22,7 +18,6 @@ const Items: React.FC<SideBarProps> = (props) => {
     <>
       <ListItem key={'Algorithms'}>
         <Button
-          classes={{ text: classes.text }}
           onClick={() => {
             console.log('Algorithms clicked')
             props.setContentsType('algorithms')
@@ -40,7 +35,6 @@ const Items: React.FC<SideBarProps> = (props) => {
       </ListItem>
       <ListItem key={'LeetCode'}>
         <Button
-          classes={{ text: classes.text }}
           onClick={() => {
             console.log('LeetCode clicked')
             props.setContentsType('leetcode')
@@ -61,7 +55,6 @@ const Items: React.FC<SideBarProps> = (props) => {
       </ListItem>
       <ListItem key={'AWS'}>
         <Button
-          classes={{ text: classes.text }}
           onClick={() => {
             console.log('AWS clicked')
             props.setContentsType('aws')

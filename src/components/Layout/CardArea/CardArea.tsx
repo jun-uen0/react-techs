@@ -9,8 +9,10 @@ const CardArea = () => {
     <Box
       sx={{
         order: isMobile ? 2 : 0,
-        width: isMobile ? '80%' : '400px', // スマホでは幅を100%に設定
-        margin: isMobile ? '0 auto' : '30px', // スマホで中央寄せ
+        width: isMobile ? '100%' : '400px',
+        maxWidth: '100%',
+        margin: isMobile ? '0 auto' : '30px',
+        overflow: 'hidden',
       }}
     >
       <Profile />

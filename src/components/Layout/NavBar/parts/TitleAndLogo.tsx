@@ -17,6 +17,7 @@ const TitleAndlogo: React.FC = () => {
         <Grid container justifyContent="center">
           <Button
             onClick={titleClick}
+            className={classes.customFontButton} // 特別なスタイルを適用
             color="inherit"
           >
             Jun Tech
@@ -31,6 +32,11 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
     textAlign: 'center'
+  },
+  customFontButton: {
+    fontFamily: '"Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Std", "Arial", sans-serif',
+    fontWeight: 'bold',
+    fontSize: '1.5rem', // 必要に応じて調整
   },
 }))
 

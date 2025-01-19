@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from 'react'
 import Button from '@material-ui/core/Button'
-import language from '../../../../assets/language_icon_white.png'
+import language from '../../../../assets/language_icon_black.png'
 
 type LanguageProps = {
   isEnglish: boolean
@@ -17,7 +17,7 @@ const Language: React.FC<LanguageProps> = (props) => {
   return (
     <>
       <Button
-        color='inherit'
+        color='primary'
         onClick={languageClick}
       >
         <img

@@ -16,7 +16,7 @@ code {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: #303030;
+  background-color: #dbf2ff;
 }
 
 .header {
@@ -25,7 +25,9 @@ code {
 
 .container {
   display: flex;
-  flex: 1;
+  flex-direction: column;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .sideBar {
@@ -33,13 +35,11 @@ code {
 }
 
 .cardArea {
-  width: 325px;
+  width: 100%;
+  max-width: 400px;
   margin: 30px;
   margin-top: 45px;
-}
-
-.content {
-  color: #ffffff;
+  overflow: hidden;
 }
 
 .content img{
@@ -49,7 +49,7 @@ code {
 .contents {
   text-align: left;
   font-family: Sans-serif;
-  background-color: #f5f5f5;
+  background-color: #ffffff;
   margin: 30px;
   margin-top: 45px;
   flex: 1;
@@ -64,13 +64,12 @@ code {
   flex: 1;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-}
-
 @media (min-width: 768px) {
   .container {
     flex-direction: row;
   }
+}
+
+html {
+  overflow-y: scroll;
 }

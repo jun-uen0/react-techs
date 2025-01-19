@@ -55,11 +55,11 @@ const useStyles = makeStyles((theme) => ({
   },
   toolbar: {
     display: 'flex',
-    justifyContent: 'space-between', // 左右に要素を配置
+    justifyContent: 'space-between',
     alignItems: 'center',
   },
   menuButton: {
-    marginRight: theme.spacing(2), // アイコンの余白を調整
+    marginRight: theme.spacing(2),
   },
 }))
 

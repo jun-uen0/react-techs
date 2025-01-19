@@ -4,10 +4,10 @@ import makeStyles from '@material-ui/core/styles/makeStyles'
 export const theme = createTheme({
   palette: {
     primary: {
-      main: '#091c33'
+      main: '#ffffff'
     },
     secondary: {
-      main: '#ffffff'
+      main: '#091c33'
     },
   },
   typography: {
@@ -19,12 +19,12 @@ export const theme = createTheme({
 
 export const useStyles = makeStyles({
   back: {
-    background: "#091c33",
-    color : '#ffffff',
+    background: "#ffffff",
+    color : '#000000',
   },
   learnMore: {
-    background: "#ffffff",
-    color : '#091c33',
+    background: "#00a2ff",
+    color : '#ffffff',
     margin: '10px',
   },
   text: {
