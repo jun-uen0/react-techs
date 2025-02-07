@@ -35,6 +35,11 @@ const Layout: React.FC = () => {
     localStorage.setItem('showCards', JSON.stringify(showCards))
   }, [showCards])
 
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const toggleDrawer = () => {
+    setMobileOpen(!mobileOpen);
+  };
+
   return (
     <div className="App">
       <MuiThemeProvider theme={theme}>
@@ -43,6 +48,7 @@ const Layout: React.FC = () => {
             isEnglish={isEnglish}
             setIsEnglish={setIsEnglish}
             isMobile={isMobile}
+            toggleDrawer={toggleDrawer}
           />
         </div>
         <div className="container">
@@ -51,6 +57,8 @@ const Layout: React.FC = () => {
               <SideBar
                 setContentsType={setContentsType}
                 setShowCards={setShowCards}
+                mobileOpen={mobileOpen}
+                toggleDrawer={toggleDrawer}
               />
             </div>
           )}
@@ -58,6 +66,8 @@ const Layout: React.FC = () => {
             <SideBar
               setContentsType={setContentsType}
               setShowCards={setShowCards}
+              mobileOpen={mobileOpen}
+              toggleDrawer={toggleDrawer}
             />
           )}
           <div className="contentsArea">

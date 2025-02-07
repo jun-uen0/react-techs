@@ -11,31 +11,16 @@ import useMediaQuery from '@material-ui/core/useMediaQuery'
 
 const SideBar: React.FC<SideBarProps> = (props) => {
   const isMobile = useMediaQuery('(max-width: 768px)')
-  const [mobileOpen, setMobileOpen] = useState(false)
-
-  const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen)
-  }
 
   return (
     <>
       {isMobile ? (
         <>
-          <IconButton
-            onClick={handleDrawerToggle}
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-          >
-            <MenuIcon />
-          </IconButton>
           <Drawer
             variant="temporary"
-            open={mobileOpen}
-            onClose={handleDrawerToggle}
-            ModalProps={{
-              keepMounted: true,
-            }}
+            open={props.mobileOpen}
+            onClose={props.toggleDrawer}
+            ModalProps={{ keepMounted: true }}
             PaperProps={{
               style: { backgroundColor: '#ffffff', color: '#000000' }
             }}
@@ -46,6 +31,8 @@ const SideBar: React.FC<SideBarProps> = (props) => {
                 <Items
                   setContentsType={props.setContentsType}
                   setShowCards={props.setShowCards}
+                  mobileOpen={props.mobileOpen}
+                  toggleDrawer={props.toggleDrawer}
                 />
               </List>
             </Box>
@@ -58,6 +45,8 @@ const SideBar: React.FC<SideBarProps> = (props) => {
             <Items
               setContentsType={props.setContentsType}
               setShowCards={props.setShowCards}
+              mobileOpen={props.mobileOpen}
+              toggleDrawer={props.toggleDrawer}
             />
           </List>
         </Box>

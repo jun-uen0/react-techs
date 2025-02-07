@@ -11,6 +11,7 @@ type NavBarProps = {
   isEnglish: boolean
   setIsEnglish: Dispatch<SetStateAction<boolean>>
   isMobile: boolean
+  toggleDrawer: () => void
 }
 
 const NavBar: React.FC<NavBarProps> = (props) => {
@@ -26,11 +27,10 @@ const NavBar: React.FC<NavBarProps> = (props) => {
             color="inherit"
             aria-label="menu"
             className={classes.menuButton}
+            onClick={props.toggleDrawer}
             >
-              <MenuIcon />
-              <p style={{ fontSize: '10px' }}>←なおす</p>
-              {/* TODO: なおす */}
-            </IconButton>
+            <MenuIcon />
+          </IconButton>
           )}
           <TitleAndLogo />
           <Language

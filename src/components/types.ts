@@ -47,4 +47,6 @@ export interface ContentsAreaProps {
 export interface SideBarProps {
   setContentsType: Dispatch<SetStateAction<contents>>
   setShowCards: Dispatch<SetStateAction<boolean>>
+  mobileOpen: boolean
+  toggleDrawer: () => void
 }
