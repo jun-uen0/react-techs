@@ -10,17 +10,24 @@ const Content: React.FC<ContentProps> = (props) => {
   const language = () => props.isEnglish ? 'jp' : 'en'
   const noContent = (<h3>This page is not available in {language()}.</h3>)
   const [read, setRead] = useState('')
-  const url =`https://raw.githubusercontent.com/jun-uen0/${convertPath(props.content.path)}_${language()}.md`
+  const [showNoContent, setShowNoContent] = useState(false) // ← 追加
+  const url = `https://raw.githubusercontent.com/jun-uen0/${convertPath(props.content.path)}_${language()}.md`
 
   useEffect(() => {
     axios.get(url)
-    .then((res) => {setRead(res.data)})
-    .catch(() => {setRead('')})
+      .then((res) => {
+        setRead(res.data)
+      })
+      .catch(() => {
+        setRead('')
+        setTimeout(() => setShowNoContent(true), 1000) // ← 1秒後に表示
+      })
   }, [props.isEnglish])
 
   const showNomal = () => {
-    return read === '' ? <div>{noContent}</div> : <MarkdownContent read={read} />
+    return read === '' ? (showNoContent ? <div>{noContent}</div> : null) : <MarkdownContent read={read} />
   }
+
   const showOriginal = (item: string) => {
     return item === "math" ? <RadixConversion /> : <RadixConversion />
   }
@@ -29,7 +36,7 @@ const Content: React.FC<ContentProps> = (props) => {
     <div style={{
       backgroundColor: '#ffffff',
       minHeight: '100vh',
-      padding: '30px', // ← 追加
+      padding: '30px',
     }}>
       <BackButton setShowCards={props.setShowCards} />
       {props.content.original
