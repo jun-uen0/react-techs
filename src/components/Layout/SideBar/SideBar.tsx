@@ -37,7 +37,7 @@ const SideBar: React.FC<SideBarProps> = (props) => {
               keepMounted: true,
             }}
             PaperProps={{
-              style: { backgroundColor: '#303030', color: '#ffffff' },
+              style: { backgroundColor: '#ffffff', color: '#000000' }
             }}
           >
             <Box sx={{ width: 240 }}>
