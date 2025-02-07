@@ -26,13 +26,17 @@ const Content: React.FC<ContentProps> = (props) => {
   }
 
   return (
-    <>
+    <div style={{
+      backgroundColor: '#ffffff',
+      minHeight: '100vh',
+      padding: '30px', // ← 追加
+    }}>
       <BackButton setShowCards={props.setShowCards} />
       {props.content.original
         ? showOriginal(props.content.original)
         : showNomal()
       }
-    </>
+    </div>
   )
 }
 
