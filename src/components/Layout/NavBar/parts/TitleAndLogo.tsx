@@ -20,7 +20,7 @@ const TitleAndlogo: React.FC = () => {
             className={classes.customFontButton} // 特別なスタイルを適用
             color="inherit"
           >
-            Jun Tech
+            Jun's blog
           </Button>
         </Grid>
       </Typography>
@@ -34,9 +34,9 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center'
   },
   customFontButton: {
-    fontFamily: '"Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Std", "Arial", sans-serif',
+    fontFamily: '"sans-serif',
     fontWeight: 'bold',
-    fontSize: '1.5rem', // 必要に応じて調整
+    fontSize: '1.5rem',
   },
 }))
 

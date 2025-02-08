@@ -1,7 +1,7 @@
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 import Typography from '@material-ui/core/Typography'
-import profilePic from '../../../../assets/profile_jun-tech-jpn.png'
+import profilePic from '../../../../assets/profile_20241028.png'
 import Sns from './Sns'
 import { useStyles } from '../../../theme'
 
@@ -29,13 +29,15 @@ const Profile: React.FC = () => {
             Jun U.
           </Typography>
           <Typography>
-            DevOps Enginner
+          <br/>
+          Site Reliability Engineering and DevOps<br />
+          based in Japan and Thailand
           </Typography>
           <span style={{ marginLeft: 16 }} />
           <Sns />
           <Typography>
             <br />
-            #DevOps #AWS
+            #AWS #GCP #Java #Python #React
           </Typography>
           <span style={{ marginLeft: 16 }} />
           <Typography variant="body2">

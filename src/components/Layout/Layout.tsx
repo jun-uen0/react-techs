@@ -79,9 +79,7 @@ const Layout: React.FC = () => {
             />
           </div>
           <div className="cardArea">
-            <CardArea
-              isMobile={isMobile}
-            />
+            <CardArea/>
           </div>
         </div>
       </MuiThemeProvider>
