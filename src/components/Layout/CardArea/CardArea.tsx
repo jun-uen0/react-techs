@@ -1,17 +1,19 @@
 import Box from '@material-ui/core/Box'
 import Profile from './parts/Profile'
-import useMediaQuery from '@material-ui/core/useMediaQuery'
 
-const CardArea = () => {
-  const isMobile = useMediaQuery('(max-width: 768px)')
+type CardAreaProps = {
+  isMobile: boolean
+}
+
+const CardArea: React.FC<CardAreaProps> = (props) => {
 
   return (
     <Box
       sx={{
-        order: isMobile ? 2 : 0,
-        width: isMobile ? '100%' : '400px',
+        order: props.isMobile ? 2 : 0,
+        width: props.isMobile ? '100%' : '400px',
         maxWidth: '100%',
-        margin: isMobile ? '0 auto' : '30px',
+        margin: props.isMobile ? '01 auto' : '30px',
         overflow: 'hidden',
       }}
     >
