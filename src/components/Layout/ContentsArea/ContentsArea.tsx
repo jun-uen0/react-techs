@@ -4,30 +4,35 @@ import Content from "./Content/Content"
 import { ContentsAreaProps } from "../../types"
 
 const ContentsArea: React.FC<ContentsAreaProps> = (props) => {
-
   const contents = require(`../../../contents/${props.contentsType}.json`)
 
   const [contentNumber, setContentNumber] = useState(() => {
-    const contentNumber = localStorage.getItem('contentNumber')
-    return JSON.parse(contentNumber as string) as number ?? -1
+    if (props.contentsType === "about") {
+      return 0
+    }
+    const savedContentNumber = localStorage.getItem('contentNumber')
+    return JSON.parse(savedContentNumber as string) as number ?? -1
   })
 
   useEffect(() => {
     localStorage.setItem('contentNumber', JSON.stringify(contentNumber))
   }, [contentNumber])
 
+  const validContentNumber = contentNumber >= 0 && contentNumber < contents.length ? contentNumber : 0;
+  const selectedContent = contents[validContentNumber];
+
   return (
     <>
-      {props.showCards
-      ? <ContentCards
+      {props.contentsType === "about" || !props.showCards
+      ? <Content
+          setShowCards={props.setShowCards}
+          content={selectedContent}
+          isEnglish={props.isEnglish}
+        />
+      : <ContentCards
           setShowCards={props.setShowCards}
           setContentNumber={setContentNumber}
           contents={contents}
-        />
-      : <Content
-          setShowCards={props.setShowCards}
-          content={contents[contentNumber]}
-          isEnglish={props.isEnglish}
         />
       }
     </>

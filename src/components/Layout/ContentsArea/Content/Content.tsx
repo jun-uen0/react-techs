@@ -7,14 +7,28 @@ import convertPath from './parts/convertPath'
 import RadixConversion from '../Original/Math/RadixConversion'
 
 const Content: React.FC<ContentProps> = (props) => {
+  const defaultContent = {
+    title: "Content Not Found",
+    path: "",
+    description: "The requested content does not exist."
+  }
+
+  const content = props.content || defaultContent;
+
   const language = () => props.isEnglish ? 'jp' : 'en'
   const languageText = language() === 'jp' ? 'Japanese' : 'English'
   const noContent = (<h3>This page is not available in {languageText}.</h3>)
+
   const [read, setRead] = useState('')
   const [showNoContent, setShowNoContent] = useState(false)
-  const url = `https://raw.githubusercontent.com/jun-uen0/${convertPath(props.content.path)}_${language()}.md`
+  const url = content.path ? `https://raw.githubusercontent.com/jun-uen0/${convertPath(content.path)}_${language()}.md` : null
 
   useEffect(() => {
+    if (!url) {
+      setShowNoContent(true)
+      return;
+    }
+
     axios.get(url)
       .then((res) => {
         setRead(res.data)
@@ -25,7 +39,7 @@ const Content: React.FC<ContentProps> = (props) => {
       })
   }, [props.isEnglish])
 
-  const showNomal = () => {
+  const showNormal = () => {
     return read === '' ? (showNoContent ? <div>{noContent}</div> : null) : <MarkdownContent read={read} />
   }
 
@@ -40,9 +54,9 @@ const Content: React.FC<ContentProps> = (props) => {
       padding: '30px',
     }}>
       <BackButton setShowCards={props.setShowCards} />
-      {props.content.original
-        ? showOriginal(props.content.original)
-        : showNomal()
+      {content.original
+        ? showOriginal(content.original)
+        : showNormal()
       }
     </div>
   )

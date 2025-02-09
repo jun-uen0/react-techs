@@ -9,7 +9,7 @@ const ContentCards: React.FC<ContentCardsProps> = (props) => {
         {props.contents.map((content:contentType, idx:number) =>{
           return (
             <ContentCard
-              key={idx} // To avoid warning
+              key={idx}
               idx={idx}
               title={content.title}
               description={content.description}

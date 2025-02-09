@@ -7,29 +7,40 @@ import ListItemText from '@material-ui/core/ListItemText'
 import Button from '@material-ui/core/Button'
 import Code from '@material-ui/icons/Code'
 import CloudQueue from '@material-ui/icons/CloudQueue'
+import InfoIcon from '@material-ui/icons/Info'
 import { useStyles } from '../../../theme'
 import { SideBarProps } from '../../../types'
 
 const Items: React.FC<SideBarProps> = (props) => {
-
   const classes = useStyles()
   const [searchParams, setSearchParams] = useSearchParams()
 
   return (
     <>
+      <ListItem key={'About Me'}>
+        <Button
+          onClick={() => {
+            props.setContentsType('about')
+            props.setShowCards(false)
+            setSearchParams({ item: 'about' })
+          }}
+        >
+          <ListItemIcon>
+            <InfoIcon color='secondary' />
+          </ListItemIcon>
+          <ListItemText primary={'About Me'} />
+        </Button>
+      </ListItem>
       <ListItem key={'Algorithms'}>
         <Button
           onClick={() => {
-            console.log('Algorithms clicked')
             props.setContentsType('algorithms')
             props.setShowCards(true)
             setSearchParams({ item: 'algorithms' })
           }}
         >
           <ListItemIcon>
-            <Code
-              color='secondary'
-            />
+            <Code color='secondary' />
           </ListItemIcon>
           <ListItemText primary={'Algorithms'} />
         </Button>
@@ -37,19 +48,13 @@ const Items: React.FC<SideBarProps> = (props) => {
       <ListItem key={'LeetCode'}>
         <Button
           onClick={() => {
-            console.log('LeetCode clicked')
             props.setContentsType('leetcode')
             props.setShowCards(true)
             setSearchParams({ item: 'leetcode' })
           }}
         >
           <ListItemIcon>
-            <img
-              src={leetCodeLogo}
-              alt='LeetCode logo'
-              height={'25px'}
-              width={'25px'}
-            />
+            <img src={leetCodeLogo} alt='LeetCode logo' height={'25px'} width={'25px'} />
           </ListItemIcon>
           <ListItemText primary={'LeetCode'} />
         </Button>
@@ -57,16 +62,13 @@ const Items: React.FC<SideBarProps> = (props) => {
       <ListItem key={'AWS'}>
         <Button
           onClick={() => {
-            console.log('AWS clicked')
             props.setContentsType('aws')
             props.setShowCards(true)
             setSearchParams({ item: 'aws' })
           }}
         >
           <ListItemIcon>
-            <CloudQueue
-              color='secondary'
-            />
+            <CloudQueue color='secondary' />
           </ListItemIcon>
           <ListItemText primary={'AWS'} />
         </Button>
@@ -74,19 +76,13 @@ const Items: React.FC<SideBarProps> = (props) => {
       <ListItem key={'Others'}>
         <Button
           onClick={() => {
-            console.log('Others clicked')
             props.setContentsType('others')
             props.setShowCards(true)
             setSearchParams({ item: 'others' })
           }}
         >
           <ListItemIcon>
-            <img
-              src={LaptopLogo}
-              alt='Laptop logo'
-              height={'25px'}
-              width={'25px'}
-            />
+            <img src={LaptopLogo} alt='Laptop logo' height={'25px'} width={'25px'} />
           </ListItemIcon>
           <ListItemText primary={'Others'} />
         </Button>
