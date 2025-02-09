@@ -30,14 +30,14 @@ const Profile: React.FC = () => {
           </Typography>
           <Typography>
           <br/>
-          Site Reliability Engineering and DevOps<br />
-          based in Japan and Thailand
+          SRE, DevOps, Cloud Platform<br />
+          Based in Thailand and Japan
           </Typography>
           <span style={{ marginLeft: 16 }} />
           <Sns />
           <Typography>
             <br />
-            #AWS #GCP #Java #Python #React
+            #AWS #GCP #Java #Python #React.js
           </Typography>
           <span style={{ marginLeft: 16 }} />
           <Typography variant="body2">
