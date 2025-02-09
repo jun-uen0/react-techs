@@ -23,5 +23,10 @@
     "title": "React Context",
     "path": "articles/articles/react/context",
     "description": "Context in React.js provides a way to pass data through the components without props. We can avoid to pass props again and again. (Parent to child via props)"
+  },
+  {
+    "title": "Introducing Ngrok",
+    "path": "articles/articles/utils/ngrok",
+    "description": "Explains about Ngrok, useful tool for web development"
   }
 ]
