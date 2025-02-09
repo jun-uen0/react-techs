@@ -10,7 +10,7 @@ const Content: React.FC<ContentProps> = (props) => {
   const language = () => props.isEnglish ? 'Japanese' : 'English'
   const noContent = (<h3>This page is not available in {language()}.</h3>)
   const [read, setRead] = useState('')
-  const [showNoContent, setShowNoContent] = useState(false) // ← 追加
+  const [showNoContent, setShowNoContent] = useState(false)
   const url = `https://raw.githubusercontent.com/jun-uen0/${convertPath(props.content.path)}_${language()}.md`
 
   useEffect(() => {
@@ -20,7 +20,7 @@ const Content: React.FC<ContentProps> = (props) => {
       })
       .catch(() => {
         setRead('')
-        setTimeout(() => setShowNoContent(true), 1000) // ← 1秒後に表示
+        setTimeout(() => setShowNoContent(true), 1000)
       })
   }, [props.isEnglish])
 

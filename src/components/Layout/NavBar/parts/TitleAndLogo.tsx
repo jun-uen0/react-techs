@@ -17,7 +17,7 @@ const TitleAndlogo: React.FC = () => {
         <Grid container justifyContent="center">
           <Button
             onClick={titleClick}
-            className={classes.customFontButton} // 特別なスタイルを適用
+            className={classes.customFontButton}
             color="inherit"
           >
             Jun's blog
