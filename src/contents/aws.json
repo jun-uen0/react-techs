@@ -2,6 +2,11 @@
   {
     "title": "Craete AWS ECS Fargate",
     "path": "articles/articles/aws/create_fargate",
-    "description": "Will explain how to create AWS ECS Fargate with very basic way."
+    "description": "Explains how to create AWS ECS Fargate with very basic way."
+  },
+  {
+    "title": "Push Docker image to AWS ECR",
+    "path": "articles/articles/aws/push_to_ecr",
+    "description": "Explains how to push Docker image to AWS ECR manually"
   }
 ]

@@ -1,5 +1,6 @@
 import { useSearchParams } from 'react-router-dom'
 import leetCodeLogo from '../../../../assets/leetcode_black.png'
+import LaptopLogo from '../../../../assets/laptop.png'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
@@ -22,7 +23,7 @@ const Items: React.FC<SideBarProps> = (props) => {
             console.log('Algorithms clicked')
             props.setContentsType('algorithms')
             props.setShowCards(true)
-            setSearchParams({item: 'algorithms'})
+            setSearchParams({ item: 'algorithms' })
           }}
         >
           <ListItemIcon>
@@ -39,7 +40,7 @@ const Items: React.FC<SideBarProps> = (props) => {
             console.log('LeetCode clicked')
             props.setContentsType('leetcode')
             props.setShowCards(true)
-            setSearchParams({item: 'leetcode'})
+            setSearchParams({ item: 'leetcode' })
           }}
         >
           <ListItemIcon>
@@ -59,7 +60,7 @@ const Items: React.FC<SideBarProps> = (props) => {
             console.log('AWS clicked')
             props.setContentsType('aws')
             props.setShowCards(true)
-            setSearchParams({item: 'aws'})
+            setSearchParams({ item: 'aws' })
           }}
         >
           <ListItemIcon>
@@ -68,6 +69,26 @@ const Items: React.FC<SideBarProps> = (props) => {
             />
           </ListItemIcon>
           <ListItemText primary={'AWS'} />
+        </Button>
+      </ListItem>
+      <ListItem key={'Others'}>
+        <Button
+          onClick={() => {
+            console.log('Others clicked')
+            props.setContentsType('others')
+            props.setShowCards(true)
+            setSearchParams({ item: 'others' })
+          }}
+        >
+          <ListItemIcon>
+            <img
+              src={LaptopLogo}
+              alt='Laptop logo'
+              height={'25px'}
+              width={'25px'}
+            />
+          </ListItemIcon>
+          <ListItemText primary={'Others'} />
         </Button>
       </ListItem>
     </>

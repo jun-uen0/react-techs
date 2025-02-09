@@ -15,14 +15,14 @@
     "description": "【Medium】You need to run with time complexity of O(log n)."
   },
   {
-    "title": "69. Sqrt(x)",
-    "path": "articles/articles/leetcode/easy/00069_sqrtx",
-    "description": "【Easy】You need to run with time complexity of O(log n)."
-  },
-  {
     "title": "58. Length of Last Word",
     "path": "articles/articles/leetcode/easy/00058_length-of-last-word",
     "description": "【Easy】You can try out your new programming language with this problem."
+  },
+  {
+    "title": "69. Sqrt(x)",
+    "path": "articles/articles/leetcode/easy/00069_sqrtx",
+    "description": "【Easy】You need to run with time complexity of O(log n)."
   },
   {
     "title": "349. Intersection of Two Arrays",

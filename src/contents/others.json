@@ -1,0 +1,27 @@
+[
+  {
+    "title": "Dockerizing Nginx",
+    "path": "articles/articles/docker/run_nginx_container",
+    "description": "Explains how to dockerize Nginx sample app"
+  },
+  {
+    "title": "Dockerizing React App",
+    "path": "articles/articles/docker/dockering_react_app",
+    "description": "Explains how to dockerize React project with sample app"
+  },
+  {
+    "title": "React State",
+    "path": "articles/articles/react/state",
+    "description": "useState is a hook that lets we add a local state to our component. Where is state data? It is stored in the component's props. Which means we can not refer state from other components. But we can call the function (Ex. Example()) to use the state."
+  },
+  {
+    "title": "React Effect",
+    "path": "articles/articles/react/effect",
+    "description": "We can perform data fetching, subscripting, and manually changing DOM from React components. In React, we call these operation 'side-effects' or 'effects' in short. And we have to use useEffect to perform these side-effects."
+  },
+  {
+    "title": "React Context",
+    "path": "articles/articles/react/context",
+    "description": "Context in React.js provides a way to pass data through the components without props. We can avoid to pass props again and again. (Parent to child via props)"
+  }
+]
