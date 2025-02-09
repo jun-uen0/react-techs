@@ -7,7 +7,7 @@ import convertPath from './parts/convertPath'
 import RadixConversion from '../Original/Math/RadixConversion'
 
 const Content: React.FC<ContentProps> = (props) => {
-  const language = () => props.isEnglish ? 'jp' : 'en'
+  const language = () => props.isEnglish ? 'Japanese' : 'English'
   const noContent = (<h3>This page is not available in {language()}.</h3>)
   const [read, setRead] = useState('')
   const [showNoContent, setShowNoContent] = useState(false) // ← 追加
