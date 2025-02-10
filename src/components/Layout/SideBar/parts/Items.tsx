@@ -21,13 +21,13 @@ const Items: React.FC<SideBarProps> = (props) => {
             props.setContentsType('about')
             props.setShowCards(false)
             setSearchParams({ item: 'about' })
-            props.toggleDrawer() // ← 追加
+            props.toggleDrawer()
           }}
         >
           <ListItemIcon>
             <InfoIcon color='secondary' />
           </ListItemIcon>
-          <ListItemText primary={'About Me'} />
+          <ListItemText primary={'About Me'} sx={{ color: "#091c33" }} />
         </Button>
       </ListItem>
 
@@ -37,13 +37,13 @@ const Items: React.FC<SideBarProps> = (props) => {
             props.setContentsType('algorithms')
             props.setShowCards(true)
             setSearchParams({ item: 'algorithms' })
-            props.toggleDrawer() // ← 追加
+            props.toggleDrawer()
           }}
         >
           <ListItemIcon>
             <Code color='secondary' />
           </ListItemIcon>
-          <ListItemText primary={'Algorithms'} />
+          <ListItemText primary={'Algorithms'} sx={{ color: "#091c33" }} />
         </Button>
       </ListItem>
 
@@ -59,7 +59,7 @@ const Items: React.FC<SideBarProps> = (props) => {
           <ListItemIcon>
             <img src={LeetCodeLogo} alt='LeetCode logo' height={'25px'} width={'25px'} />
           </ListItemIcon>
-          <ListItemText primary={'LeetCode'} />
+          <ListItemText primary={'LeetCode'} sx={{ color: "#091c33" }} />
         </Button>
       </ListItem>
 
@@ -69,13 +69,13 @@ const Items: React.FC<SideBarProps> = (props) => {
             props.setContentsType('aws')
             props.setShowCards(true)
             setSearchParams({ item: 'aws' })
-            props.toggleDrawer() // ← 追加
+            props.toggleDrawer()
           }}
         >
           <ListItemIcon>
             <CloudQueue color='secondary' />
           </ListItemIcon>
-          <ListItemText primary={'AWS'} />
+          <ListItemText primary={'AWS'} sx={{ color: "#091c33" }} />
         </Button>
       </ListItem>
 
@@ -85,13 +85,13 @@ const Items: React.FC<SideBarProps> = (props) => {
             props.setContentsType('others')
             props.setShowCards(true)
             setSearchParams({ item: 'others' })
-            props.toggleDrawer() // ← 追加
+            props.toggleDrawer()
           }}
         >
           <ListItemIcon>
             <img src={LaptopLogo} alt='Laptop logo' height={'25px'} width={'25px'} />
           </ListItemIcon>
-          <ListItemText primary={'Others'} />
+          <ListItemText primary={'Others'} sx={{ color: "#091c33" }} />
         </Button>
       </ListItem>
     </>
