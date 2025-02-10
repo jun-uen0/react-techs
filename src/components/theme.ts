@@ -1,5 +1,5 @@
-import { createTheme } from '@material-ui/core/styles'
-import makeStyles from '@material-ui/core/styles/makeStyles'
+import { createTheme } from '@mui/material/styles'
+import { makeStyles } from '@mui/styles'
 
 export const theme = createTheme({
   palette: {
@@ -20,11 +20,11 @@ export const theme = createTheme({
 export const useStyles = makeStyles({
   back: {
     background: "#ffffff",
-    color : '#000000',
+    color: '#000000',
   },
   learnMore: {
     background: "#00a2ff",
-    color : '#ffffff',
+    color: '#ffffff',
     margin: '10px',
   },
   text: {

@@ -3,10 +3,10 @@ import NavBar from './NavBar/NavBar'
 import SideBar from './SideBar/SideBar'
 import CardArea from './CardArea/CardArea'
 import ContentsArea from "./ContentsArea/ContentsArea"
-import { MuiThemeProvider } from '@material-ui/core/styles'
+import { ThemeProvider } from '@mui/material/styles' // 修正 ✅
 import { contents } from '../types'
 import { theme } from '../theme'
-import useMediaQuery from '@material-ui/core/useMediaQuery'
+import useMediaQuery from '@mui/material/useMediaQuery'
 
 const Layout: React.FC = () => {
   const isMobile = useMediaQuery('(max-width: 768px)')
@@ -19,7 +19,7 @@ const Layout: React.FC = () => {
     localStorage.setItem('isEnglish', JSON.stringify(isEnglish))
   }, [isEnglish])
 
-  const [contentsType, setContentsType] = useState(():contents => {
+  const [contentsType, setContentsType] = useState((): contents => {
     const contentsType = localStorage.getItem('contentsType')
     return JSON.parse(contentsType as string) ?? 'algorithms'
   })
@@ -42,7 +42,7 @@ const Layout: React.FC = () => {
 
   return (
     <div className="App">
-      <MuiThemeProvider theme={theme}>
+      <ThemeProvider theme={theme}> {/* 修正 ✅ */}
         <div className="header">
           <NavBar
             isEnglish={isEnglish}
@@ -79,10 +79,10 @@ const Layout: React.FC = () => {
             />
           </div>
           <div className="cardArea">
-            <CardArea/>
+            <CardArea />
           </div>
         </div>
-      </MuiThemeProvider>
+      </ThemeProvider>
     </div>
   )
 }

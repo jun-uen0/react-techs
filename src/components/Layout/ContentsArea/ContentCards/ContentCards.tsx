@@ -1,4 +1,4 @@
-import Box from '@material-ui/core/Box'
+import Box from '@mui/material/Box'
 import ContentCard from './parts/ContentCard'
 import { contentType, ContentCardsProps } from '../../../types'
 
@@ -6,7 +6,7 @@ const ContentCards: React.FC<ContentCardsProps> = (props) => {
   return (
     <>
       <Box>
-        {props.contents.map((content:contentType, idx:number) =>{
+        {props.contents.map((content: contentType, idx: number) => {
           return (
             <ContentCard
               key={idx}

@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from 'react'
-import Button from '@material-ui/core/Button'
+import Button from '@mui/material/Button'
 import language from '../../../../assets/language_icon_black.png'
 
 type LanguageProps = {

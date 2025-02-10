@@ -1,18 +1,16 @@
 import { useSearchParams } from 'react-router-dom'
 import LeetCodeLogo from '../../../../assets/leetcode_black.png'
 import LaptopLogo from '../../../../assets/laptop.png'
-import ListItem from '@material-ui/core/ListItem'
-import ListItemIcon from '@material-ui/core/ListItemIcon'
-import ListItemText from '@material-ui/core/ListItemText'
-import Button from '@material-ui/core/Button'
-import Code from '@material-ui/icons/Code'
-import CloudQueue from '@material-ui/icons/CloudQueue'
-import InfoIcon from '@material-ui/icons/Info'
-import { useStyles } from '../../../theme'
+import ListItem from '@mui/material/ListItem'
+import ListItemIcon from '@mui/material/ListItemIcon'
+import ListItemText from '@mui/material/ListItemText'
+import Button from '@mui/material/Button'
+import Code from '@mui/icons-material/Code'
+import CloudQueue from '@mui/icons-material/CloudQueue'
+import InfoIcon from '@mui/icons-material/Info'
 import { SideBarProps } from '../../../types'
 
 const Items: React.FC<SideBarProps> = (props) => {
-  const classes = useStyles()
   const [searchParams, setSearchParams] = useSearchParams()
 
   return (
@@ -23,6 +21,7 @@ const Items: React.FC<SideBarProps> = (props) => {
             props.setContentsType('about')
             props.setShowCards(false)
             setSearchParams({ item: 'about' })
+            props.toggleDrawer() // ← 追加
           }}
         >
           <ListItemIcon>
@@ -31,12 +30,14 @@ const Items: React.FC<SideBarProps> = (props) => {
           <ListItemText primary={'About Me'} />
         </Button>
       </ListItem>
+
       <ListItem key={'Algorithms'}>
         <Button
           onClick={() => {
             props.setContentsType('algorithms')
             props.setShowCards(true)
             setSearchParams({ item: 'algorithms' })
+            props.toggleDrawer() // ← 追加
           }}
         >
           <ListItemIcon>
@@ -45,12 +46,14 @@ const Items: React.FC<SideBarProps> = (props) => {
           <ListItemText primary={'Algorithms'} />
         </Button>
       </ListItem>
+
       <ListItem key={'LeetCode'}>
         <Button
           onClick={() => {
             props.setContentsType('leetcode')
             props.setShowCards(true)
             setSearchParams({ item: 'leetcode' })
+            props.toggleDrawer() // ← 追加
           }}
         >
           <ListItemIcon>
@@ -59,12 +62,14 @@ const Items: React.FC<SideBarProps> = (props) => {
           <ListItemText primary={'LeetCode'} />
         </Button>
       </ListItem>
+
       <ListItem key={'AWS'}>
         <Button
           onClick={() => {
             props.setContentsType('aws')
             props.setShowCards(true)
             setSearchParams({ item: 'aws' })
+            props.toggleDrawer() // ← 追加
           }}
         >
           <ListItemIcon>
@@ -73,12 +78,14 @@ const Items: React.FC<SideBarProps> = (props) => {
           <ListItemText primary={'AWS'} />
         </Button>
       </ListItem>
+
       <ListItem key={'Others'}>
         <Button
           onClick={() => {
             props.setContentsType('others')
             props.setShowCards(true)
             setSearchParams({ item: 'others' })
+            props.toggleDrawer() // ← 追加
           }}
         >
           <ListItemIcon>

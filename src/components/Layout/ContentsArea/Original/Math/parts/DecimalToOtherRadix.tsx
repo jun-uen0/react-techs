@@ -1,13 +1,13 @@
 import React from 'react'
-import Box from '@material-ui/core/Box'
-import TextField from '@material-ui/core/TextField'
-import Button from '@material-ui/core/Button'
+import Box from '@mui/material/Box'
+import TextField from '@mui/material/TextField'
+import Button from '@mui/material/Button'
 
 const DecimalToOtherRadix: React.FC = () => {
 
   const [input, setInput] = React.useState('')
   const [output, setOutput] = React.useState(0)
-  const [radix,setRadix] = React.useState('2')
+  const [radix, setRadix] = React.useState('2')
 
   const decimalToOtherRadix = (input: string, radix: string) => {
     const decimalNum = Number(input)
@@ -62,7 +62,7 @@ const DecimalToOtherRadix: React.FC = () => {
       </Box>
       <Box sx={{ mt: 2 }} >
         <Button variant="contained" onClick={() => {
-          decimalToOtherRadix(input,radix)
+          decimalToOtherRadix(input, radix)
         }}>Conversion</Button>
       </Box>
       <Box sx={{ mt: 2 }} >

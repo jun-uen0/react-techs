@@ -1,13 +1,13 @@
-import Box from '@material-ui/core/Box'
-import Toolbar from '@material-ui/core/Toolbar'
-import List from '@material-ui/core/List'
+import Box from '@mui/material/Box'
+import Toolbar from '@mui/material/Toolbar'
+import List from '@mui/material/List'
 import Items from './parts/Items'
 import { SideBarProps } from '../../types'
-import Drawer from '@material-ui/core/Drawer';
-import IconButton from '@material-ui/core/IconButton'
-import MenuIcon from '@material-ui/icons/Menu'
+import Drawer from '@mui/material/Drawer';
+import IconButton from '@mui/material/IconButton'
+import MenuIcon from '@mui/icons-material/Menu'
 import { useState } from 'react'
-import useMediaQuery from '@material-ui/core/useMediaQuery'
+import useMediaQuery from '@mui/material/useMediaQuery'
 
 const SideBar: React.FC<SideBarProps> = (props) => {
   const isMobile = useMediaQuery('(max-width: 768px)')
@@ -19,7 +19,7 @@ const SideBar: React.FC<SideBarProps> = (props) => {
           <Drawer
             variant="temporary"
             open={props.mobileOpen}
-            onClose={props.toggleDrawer}
+            onClose={props.toggleDrawer} // ← 閉じる処理
             ModalProps={{ keepMounted: true }}
             PaperProps={{
               style: { backgroundColor: '#ffffff', color: '#000000' }
@@ -32,7 +32,7 @@ const SideBar: React.FC<SideBarProps> = (props) => {
                   setContentsType={props.setContentsType}
                   setShowCards={props.setShowCards}
                   mobileOpen={props.mobileOpen}
-                  toggleDrawer={props.toggleDrawer}
+                  toggleDrawer={props.toggleDrawer} // ← 追加
                 />
               </List>
             </Box>

@@ -1,55 +1,42 @@
-import Card from '@material-ui/core/Card'
-import CardContent from '@material-ui/core/CardContent'
-import Typography from '@material-ui/core/Typography'
+import Card from '@mui/material/Card'
+import CardContent from '@mui/material/CardContent'
+import Typography from '@mui/material/Typography'
+import Box from '@mui/material/Box'
 import profilePic from '../../../../assets/profile_20241028.png'
 import Sns from './Sns'
-import { useStyles } from '../../../theme'
 
 const Profile: React.FC = () => {
-
-  const classes = useStyles()
-
   return (
-    <>
-      <Card className={classes.back}>
-        <CardContent>
-          <Typography>
-            <img
-              alt='profile'
-              src={profilePic}
-              style={{
-                width: 150,
-                height: 150,
-                borderRadius: '50%',
-              }}
-            />
-          </Typography>
-          <span style={{ marginLeft: 16 }} />
-          <Typography variant="h5" component="div">
-            Jun U.
-          </Typography>
-          <Typography>
-          <br/>
-          SRE, DevOps, Cloud Platform<br />
+    <Card sx={{ background: "#ffffff", color: "#000000", p: 2 }}>
+      <CardContent>
+        <Box sx={{ textAlign: "center" }}>
+          <img
+            alt="profile"
+            src={profilePic}
+            style={{
+              width: 150,
+              height: 150,
+              borderRadius: "50%",
+            }}
+          />
+        </Box>
+        <Typography variant="h5" component="div" sx={{ textAlign: "center", mt: 2 }}>
+          Jun U.
+        </Typography>
+        <Typography sx={{ textAlign: "center", mt: 1 }}>
+          SRE, DevOps, Cloud Platform <br />
           Based in Thailand and Japan
-          </Typography>
-          <span style={{ marginLeft: 16 }} />
-          <Sns />
-          <Typography>
-            <br />
-            #AWS #GCP #Java #Python #React.js
-          </Typography>
-          <span style={{ marginLeft: 16 }} />
-          <Typography variant="body2">
-            "If you feel like the dumbest person in the room,
-            you're in the right room."
-          </Typography>
-        </CardContent>
-        <span style={{ marginLeft: 16 }} />
-      </Card>
-      <span style={{ marginLeft: 16 }} />
-    </>
-  )
-}
+        </Typography>
+        <Sns />
+        <Typography sx={{ textAlign: "center", mt: 1 }}>
+          #AWS #GCP #Java #Python #React.js
+        </Typography>
+        <Typography variant="body2" sx={{ textAlign: "center", mt: 1 }}>
+          "If you feel like the dumbest person in the room, you're in the right room."
+        </Typography>
+      </CardContent>
+    </Card>
+  );
+};
 
-export default Profile
+export default Profile;

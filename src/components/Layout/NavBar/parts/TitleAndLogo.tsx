@@ -1,23 +1,19 @@
-import makeStyles from '@material-ui/core/styles/makeStyles'
-import Typography from '@material-ui/core/Typography'
-import Button from '@material-ui/core/Button'
-import Grid from '@material-ui/core/Grid'
+import Typography from '@mui/material/Typography'
+import Button from '@mui/material/Button'
+import Grid from '@mui/material/Grid'
 
-const TitleAndlogo: React.FC = () => {
-
-  const classes = useStyles()
-
+const TitleAndLogo: React.FC = () => {
   const titleClick = () => {
     console.log('isTitleClicked is called')
   }
 
   return (
     <>
-      <Typography variant="subtitle1" className={classes.title}>
+      <Typography variant="subtitle1" sx={{ textAlign: "center", flexGrow: 1 }}>
         <Grid container justifyContent="center">
           <Button
             onClick={titleClick}
-            className={classes.customFontButton}
+            sx={{ fontFamily: "sans-serif", fontWeight: "bold", fontSize: "1.5rem" }}
             color="inherit"
           >
             Jun's blog
@@ -28,16 +24,4 @@ const TitleAndlogo: React.FC = () => {
   )
 }
 
-const useStyles = makeStyles((theme) => ({
-  title: {
-    flexGrow: 1,
-    textAlign: 'center'
-  },
-  customFontButton: {
-    fontFamily: '"sans-serif',
-    fontWeight: 'bold',
-    fontSize: '1.5rem',
-  },
-}))
-
-export default TitleAndlogo
+export default TitleAndLogo
