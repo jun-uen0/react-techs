@@ -8,7 +8,7 @@ import { ContentCardProps } from '../../../../types'
 const ContentCard: React.FC<ContentCardProps> = (props) => {
   return (
     <>
-      <Card sx={{ background: "#ffffff", color: "#000000", p: 2 }}>
+      <Card sx={{ background: "#ffffff", color: "#000000", p: 2 , mb: 3}}>
         <CardContent>
           <Typography variant="h5" component="div">
             {props.title}
