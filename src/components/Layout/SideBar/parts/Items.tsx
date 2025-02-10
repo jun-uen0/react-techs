@@ -1,5 +1,5 @@
 import { useSearchParams } from 'react-router-dom'
-import leetCodeLogo from '../../../../assets/leetcode_black.png'
+import LeetCodeLogo from '../../../../assets/leetcode_black.png'
 import LaptopLogo from '../../../../assets/laptop.png'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
@@ -54,7 +54,7 @@ const Items: React.FC<SideBarProps> = (props) => {
           }}
         >
           <ListItemIcon>
-            <img src={leetCodeLogo} alt='LeetCode logo' height={'25px'} width={'25px'} />
+            <img src={LeetCodeLogo} alt='LeetCode logo' height={'25px'} width={'25px'} />
           </ListItemIcon>
           <ListItemText primary={'LeetCode'} />
         </Button>

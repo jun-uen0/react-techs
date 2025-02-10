@@ -1,32 +1,39 @@
 import Button from '@material-ui/core/Button'
 import Grid from '@material-ui/core/Grid'
-import Twitter from '@material-ui/icons/Twitter'
-import GitHub from '@material-ui/icons/GitHub'
 import YouTube from '@material-ui/icons/YouTube'
+import GitHub from '@material-ui/icons/GitHub'
+import LinkedIn from '@material-ui/icons/LinkedIn'
+import LeetCodeLogo from '../../../../assets/leetcode_black.png'
+import X from '../../../../assets/x.png'
+import Threads from '../../../../assets/threads.png'
+import Note from '../../../../assets/note.png'
 
-const SnsList = [<YouTube />, <GitHub />]
+const snsLinks = [
+  { icon: <GitHub />, link: "https://github.com/jun-uen0" },
+  { icon: <LinkedIn />, link: "https://www.linkedin.com/in/jun-uen0" },
+  { icon: <img src={LeetCodeLogo} alt="LeetCode" height="25px" />, link: "https://leetcode.com/u/jun-uen0" },
+  { icon: <YouTube />, link: "https://www.youtube.com/@JunTechJPN" },
+  { icon: <img src={Threads} alt="Threads" height="25px" />, link: "https://www.threads.net/@jun__ueno" },
+  { icon: <img src={X} alt="X" height="25px" />, link: "https://x.com/jun_uen0" },
+  { icon: <img src={Note} alt="Note" height="25px" />, link: "https://note.com/jun_uen0" },
+]
 
 const SNS = () => {
-
   return (
-    <>
-      <Grid container justifyContent="center">
-        <Button
-          href="https://www.youtube.com/@JunTechJPN"
-          target="_blank"
-          color="secondary"
-        >
-          {SnsList[0]}
-        </Button>
-        <Button
-          href="https://github.com/jun-uen0"
-          target="_blank"
-          color="secondary"
-        >
-          {SnsList[1]}
-        </Button>
-      </Grid>
-    </>
+    <Grid container spacing={3} justifyContent="center" alignItems="center" style={{ textAlign: 'center' }}>
+      {snsLinks.map((sns, index) => (
+        <Grid item xs={3} sm={3} key={index}>
+          <Button
+            href={sns.link}
+            target="_blank"
+            color="secondary"
+            style={{ minWidth: '50px' }}
+          >
+            {sns.icon}
+          </Button>
+        </Grid>
+      ))}
+    </Grid>
   )
 }
 
