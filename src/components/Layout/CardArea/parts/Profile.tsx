@@ -21,17 +21,20 @@ const Profile: React.FC = () => {
           />
         </Box>
         <Typography variant="h5" component="div" sx={{ textAlign: "center", mt: 2 }}>
-          Jun U.
+          Jumpei Ueno (Jun)
         </Typography>
         <Typography sx={{ textAlign: "center", mt: 1 }}>
           SRE, DevOps, Cloud Platform <br />
-          Based in Thailand and Japan
+          Based in Thailand and Japan <br />
+          <br />
         </Typography>
         <Sns />
-        <Typography sx={{ textAlign: "center", mt: 1 }}>
-          #AWS #GCP #Java #Python #React.js
-        </Typography>
+        {/* <Typography sx={{ textAlign: "center", mt: 1 }}>
+          <br />
+          #AWS #Python #Node.js
+        </Typography> */}
         <Typography variant="body2" sx={{ textAlign: "center", mt: 1 }}>
+          <br />
           "If you feel like the dumbest person in the room, you're in the right room."
         </Typography>
       </CardContent>

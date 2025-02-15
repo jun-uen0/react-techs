@@ -19,7 +19,7 @@ const SideBar: React.FC<SideBarProps> = (props) => {
           <Drawer
             variant="temporary"
             open={props.mobileOpen}
-            onClose={props.toggleDrawer} // ← 閉じる処理
+            onClose={props.toggleDrawer}
             ModalProps={{ keepMounted: true }}
             PaperProps={{
               style: { backgroundColor: '#ffffff', color: '#000000' }
@@ -32,7 +32,7 @@ const SideBar: React.FC<SideBarProps> = (props) => {
                   setContentsType={props.setContentsType}
                   setShowCards={props.setShowCards}
                   mobileOpen={props.mobileOpen}
-                  toggleDrawer={props.toggleDrawer} // ← 追加
+                  toggleDrawer={props.toggleDrawer}
                 />
               </List>
             </Box>
