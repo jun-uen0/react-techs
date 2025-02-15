@@ -39,27 +39,12 @@ const Content: React.FC<ContentProps> = (props) => {
       })
   }, [props.isEnglish])
 
-  const showNormal = () => {
-    return read === '' ? (showNoContent ? <div>{noContent}</div> : null) : <MarkdownContent read={read} />
-  }
-
-  const showOriginal = (item: string) => {
-    return item === "math" ? <RadixConversion /> : <RadixConversion />
-  }
-
-  return (
-    <div style={{
-      backgroundColor: '#ffffff',
-      minHeight: '100vh',
-      padding: '30px',
-    }}>
-      <BackButton setShowCards={props.setShowCards} />
-      {content.original
-        ? showOriginal(content.original)
-        : showNormal()
-      }
-    </div>
-  )
+  return read === ''
+    ? (showNoContent ? <div>{noContent}</div> : null)
+    : <div style={{backgroundColor: '#ffffff', minHeight: '100vh', padding: '30px' }}>
+        <BackButton setShowCards={props.setShowCards} />
+        <MarkdownContent read={read} />
+      </div>
 }
 
 export default Content

@@ -1,40 +1,30 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
+import { useParams } from "react-router-dom"
 import ContentCards from "./ContentCards/ContentCards"
 import Content from "./Content/Content"
-import { ContentsAreaProps } from "../../types"
+import { ContentsAreaProps, contentType } from "../../types"
 
-const ContentsArea: React.FC<ContentsAreaProps> = (props) => {
-  const contents = require(`../../../contents/${props.contentsType}.json`)
+const ContentsArea: React.FC<ContentsAreaProps> = ({ setShowCards, showCards, isEnglish, contentsType }) => {
+  const { categoryName } = useParams()
+  const contents: contentType[] = require(`../../../contents/${categoryName}.json`)
 
-  const [contentNumber, setContentNumber] = useState(() => {
-    if (props.contentsType === "about") {
-      return 0
-    }
-    const savedContentNumber = localStorage.getItem('contentNumber')
-    return JSON.parse(savedContentNumber as string) as number ?? -1
-  })
-
-  useEffect(() => {
-    localStorage.setItem('contentNumber', JSON.stringify(contentNumber))
-  }, [contentNumber])
-
-  const validContentNumber = contentNumber >= 0 && contentNumber < contents.length ? contentNumber : 0;
-  const selectedContent = contents[validContentNumber];
+  const [contentNumber, setContentNumber] = useState<number>(-1)
 
   return (
     <>
-      {props.contentsType === "about" || !props.showCards
-      ? <Content
-          setShowCards={props.setShowCards}
-          content={selectedContent}
-          isEnglish={props.isEnglish}
+      {!showCards ? (
+        <Content
+          setShowCards={setShowCards}
+          content={contents[contentNumber] ?? contents[0]}
+          isEnglish={isEnglish}
         />
-      : <ContentCards
-          setShowCards={props.setShowCards}
-          setContentNumber={setContentNumber}
+      ) : (
+        <ContentCards
           contents={contents}
+          setShowCards={setShowCards}
+          setContentNumber={setContentNumber}
         />
-      }
+      )}
     </>
   )
 }

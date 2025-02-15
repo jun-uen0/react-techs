@@ -4,20 +4,12 @@ import SideBar from './SideBar/SideBar'
 import CardArea from './CardArea/CardArea'
 import ContentsArea from "./ContentsArea/ContentsArea"
 import { ThemeProvider } from '@mui/material/styles' // 修正 ✅
-import { contents } from '../types'
+import { contents, LayoutProps } from '../types'
 import { theme } from '../theme'
 import useMediaQuery from '@mui/material/useMediaQuery'
 
-const Layout: React.FC = () => {
+const Layout: React.FC<LayoutProps> = (props) => {
   const isMobile = useMediaQuery('(max-width: 768px)')
-
-  const [isEnglish, setIsEnglish] = useState(() => {
-    const isEnglish = localStorage.getItem('isEnglish')
-    return JSON.parse(isEnglish as string) as boolean ?? true
-  })
-  useEffect(() => {
-    localStorage.setItem('isEnglish', JSON.stringify(isEnglish))
-  }, [isEnglish])
 
   const [contentsType, setContentsType] = useState((): contents => {
     const contentsType = localStorage.getItem('contentsType')
@@ -26,14 +18,6 @@ const Layout: React.FC = () => {
   useEffect(() => {
     localStorage.setItem('contentsType', JSON.stringify(contentsType))
   }, [contentsType])
-
-  const [showCards, setShowCards] = useState(() => {
-    const showCards = localStorage.getItem('showCards')
-    return JSON.parse(showCards as string) as boolean ?? true
-  })
-  useEffect(() => {
-    localStorage.setItem('showCards', JSON.stringify(showCards))
-  }, [showCards])
 
   const [mobileOpen, setMobileOpen] = useState(false);
   const toggleDrawer = () => {
@@ -45,8 +29,8 @@ const Layout: React.FC = () => {
       <ThemeProvider theme={theme}> {/* 修正 ✅ */}
         <div className="header">
           <NavBar
-            isEnglish={isEnglish}
-            setIsEnglish={setIsEnglish}
+            isEnglish={props.isEnglish}
+            setIsEnglish={props.setIsEnglish}
             isMobile={isMobile}
             toggleDrawer={toggleDrawer}
           />
@@ -56,7 +40,7 @@ const Layout: React.FC = () => {
             <div className="sideBar">
               <SideBar
                 setContentsType={setContentsType}
-                setShowCards={setShowCards}
+                setShowCards={props.setShowCards}
                 mobileOpen={mobileOpen}
                 toggleDrawer={toggleDrawer}
               />
@@ -65,16 +49,16 @@ const Layout: React.FC = () => {
           {isMobile && (
             <SideBar
               setContentsType={setContentsType}
-              setShowCards={setShowCards}
+              setShowCards={props.setShowCards}
               mobileOpen={mobileOpen}
               toggleDrawer={toggleDrawer}
             />
           )}
           <div className="contentsArea">
             <ContentsArea
-              setShowCards={setShowCards}
-              showCards={showCards}
-              isEnglish={isEnglish}
+              setShowCards={props.setShowCards}
+              showCards={props.showCards}
+              isEnglish={props.isEnglish}
               contentsType={contentsType}
             />
           </div>

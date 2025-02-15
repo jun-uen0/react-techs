@@ -8,7 +8,7 @@ import { ContentCardProps } from '../../../../types'
 const ContentCard: React.FC<ContentCardProps> = (props) => {
   return (
     <>
-      <Card sx={{ background: "#ffffff", color: "#000000", p: 2 , mb: 3}}>
+      <Card sx={{ background: "#ffffff", color: "#000000", p: 2, mb: 3 }}>
         <CardContent>
           <Typography variant="h5" component="div">
             {props.title}
@@ -18,10 +18,7 @@ const ContentCard: React.FC<ContentCardProps> = (props) => {
         <CardActions>
           <Button
             sx={{ background: "#00a2ff", color: "#ffffff", mt: 1 }}
-            onClick={() => {
-              props.setShowCards(false)
-              props.setContentNumber(props.idx)
-            }}
+            onClick={props.onClick}
           >
             Read
           </Button>

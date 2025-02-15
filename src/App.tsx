@@ -1,19 +1,11 @@
-import Layout from './components/Layout/Layout'
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom'
+import AppRoutes from './routes/AppRoutes'
 
 const App: React.FC = () => {
   return (
-    <>
-      <Router>
-        <Routes>
-          <Route path='/' element={< Layout />}></Route>
-        </Routes>
-      </Router>
-    </>
+    <Router>
+      <AppRoutes />
+    </Router>
   )
 }
 

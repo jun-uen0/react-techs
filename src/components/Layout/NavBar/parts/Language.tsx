@@ -1,17 +1,14 @@
 import { Dispatch, SetStateAction } from 'react'
 import Button from '@mui/material/Button'
 import language from '../../../../assets/language_icon_black.png'
-
-type LanguageProps = {
-  isEnglish: boolean
-  setIsEnglish: Dispatch<SetStateAction<boolean>>
-}
+import { LanguageProps } from '../../../types'
 
 const Language: React.FC<LanguageProps> = (props) => {
 
   const languageClick = () => {
-    console.log('languageClick is called')
-    props.setIsEnglish(!props.isEnglish)
+    props.setIsEnglish
+      ? props.setIsEnglish(!props.isEnglish)
+      : console.error("Can not change the language")
   }
 
   return (

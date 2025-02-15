@@ -3,7 +3,7 @@ const BackButton: React.FC<BackButtontProps> = (props) => {
   return (
     <button
       onClick={() => {
-        props.setShowCards(true)
+        if (props.setShowCards) props.setShowCards(true)
       }}
     >
       ← Back

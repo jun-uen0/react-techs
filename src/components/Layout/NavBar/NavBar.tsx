@@ -6,13 +6,7 @@ import AppBar from "@mui/material/AppBar";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import Box from "@mui/material/Box";
-
-type NavBarProps = {
-  isEnglish: boolean;
-  setIsEnglish: Dispatch<SetStateAction<boolean>>;
-  isMobile: boolean;
-  toggleDrawer: () => void;
-};
+import { NavBarProps } from '../../types'
 
 const NavBar: React.FC<NavBarProps> = (props) => {
   return (
