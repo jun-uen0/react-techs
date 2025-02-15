@@ -8,6 +8,7 @@ import Button from '@mui/material/Button'
 import Code from '@mui/icons-material/Code'
 import CloudQueue from '@mui/icons-material/CloudQueue'
 import InfoIcon from '@mui/icons-material/Info'
+import Divider from '@mui/material/Divider'
 import { SideBarProps } from '../../../types'
 
 const Items: React.FC<SideBarProps> = (props) => {
@@ -30,7 +31,7 @@ const Items: React.FC<SideBarProps> = (props) => {
           <ListItemText primary={'About Me'} sx={{ color: "#091c33" }} />
         </Button>
       </ListItem>
-
+      <Divider sx={{ my: 1, mx: 2 }} />
       <ListItem key={'Algorithms'}>
         <Button
           onClick={() => {
