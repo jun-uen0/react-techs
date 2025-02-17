@@ -18,18 +18,18 @@ const ContentsArea: React.FC<ContentsAreaProps> = (props) => {
     localStorage.setItem('contentNumber', JSON.stringify(contentNumber))
   }, [contentNumber])
 
-  const validContentNumber = contentNumber >= 0 && contentNumber < contents.length ? contentNumber : 0;
-  const selectedContent = contents[validContentNumber];
+  const validContentNumber = contentNumber >= 0 && contentNumber < contents.length ? contentNumber : 0
+  const selectedContent = contents[validContentNumber]
 
   return (
     <>
       {props.contentsType === "about" || !props.showCards
-      ? <Content
+        ? <Content
           setShowCards={props.setShowCards}
           content={selectedContent}
           isEnglish={props.isEnglish}
         />
-      : <ContentCards
+        : <ContentCards
           setShowCards={props.setShowCards}
           setContentNumber={setContentNumber}
           contents={contents}

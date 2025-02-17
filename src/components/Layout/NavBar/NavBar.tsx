@@ -1,18 +1,18 @@
-import { Dispatch, SetStateAction } from "react";
-import TitleAndLogo from "./parts/TitleAndLogo";
-import Language from "./parts/Language";
-import Toolbar from "@mui/material/Toolbar";
-import AppBar from "@mui/material/AppBar";
-import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
-import Box from "@mui/material/Box";
+import { Dispatch, SetStateAction } from "react"
+import TitleAndLogo from "./parts/TitleAndLogo"
+import Language from "./parts/Language"
+import Toolbar from "@mui/material/Toolbar"
+import AppBar from "@mui/material/AppBar"
+import IconButton from "@mui/material/IconButton"
+import MenuIcon from "@mui/icons-material/Menu"
+import Box from "@mui/material/Box"
 
 type NavBarProps = {
-  isEnglish: boolean;
-  setIsEnglish: Dispatch<SetStateAction<boolean>>;
-  isMobile: boolean;
-  toggleDrawer: () => void;
-};
+  isEnglish: boolean
+  setIsEnglish: Dispatch<SetStateAction<boolean>>
+  isMobile: boolean
+  toggleDrawer: () => void
+}
 
 const NavBar: React.FC<NavBarProps> = (props) => {
   return (
@@ -36,7 +36,7 @@ const NavBar: React.FC<NavBarProps> = (props) => {
         </Toolbar>
       </AppBar>
     </Box>
-  );
-};
+  )
+}
 
-export default NavBar;
+export default NavBar

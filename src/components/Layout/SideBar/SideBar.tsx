@@ -3,7 +3,7 @@ import Toolbar from '@mui/material/Toolbar'
 import List from '@mui/material/List'
 import Items from './parts/Items'
 import { SideBarProps } from '../../types'
-import Drawer from '@mui/material/Drawer';
+import Drawer from '@mui/material/Drawer'
 import IconButton from '@mui/material/IconButton'
 import MenuIcon from '@mui/icons-material/Menu'
 import { useState } from 'react'

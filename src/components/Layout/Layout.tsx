@@ -35,10 +35,10 @@ const Layout: React.FC = () => {
     localStorage.setItem('showCards', JSON.stringify(showCards))
   }, [showCards])
 
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false)
   const toggleDrawer = () => {
-    setMobileOpen(!mobileOpen);
-  };
+    setMobileOpen(!mobileOpen)
+  }
 
   return (
     <div className="App">

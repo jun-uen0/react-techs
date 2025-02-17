@@ -13,7 +13,7 @@ const Content: React.FC<ContentProps> = (props) => {
     description: "The requested content does not exist."
   }
 
-  const content = props.content || defaultContent;
+  const content = props.content || defaultContent
 
   const language = () => props.isEnglish ? 'jp' : 'en'
   const languageText = language() === 'jp' ? 'Japanese' : 'English'
@@ -26,7 +26,7 @@ const Content: React.FC<ContentProps> = (props) => {
   useEffect(() => {
     if (!url) {
       setShowNoContent(true)
-      return;
+      return
     }
 
     axios.get(url)

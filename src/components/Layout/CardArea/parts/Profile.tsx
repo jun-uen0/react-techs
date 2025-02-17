@@ -39,7 +39,7 @@ const Profile: React.FC = () => {
         </Typography>
       </CardContent>
     </Card>
-  );
-};
+  )
+}
 
-export default Profile;
+export default Profile
