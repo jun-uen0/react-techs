@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { useParams } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 import { ThemeProvider } from "@mui/material/styles"
 import useMediaQuery from "@mui/material/useMediaQuery"
 import NavBar from "./NavBar/NavBar"
@@ -9,27 +9,31 @@ import ContentsArea from "./ContentsArea/ContentsArea"
 import { contents } from "../types"
 import { theme } from "../theme"
 
+// Language
+const SUPPORTED_LANGUAGES = ["en", "jp"]
+
 const Layout: React.FC = () => {
   const isMobile = useMediaQuery('(max-width: 768px)')
-  const { categoryName } = useParams<{ categoryName: string }>()
+  const { language, categoryName } = useParams<{ language: string; categoryName: string }>()
 
-  const [isEnglish, setIsEnglish] = useState(() => {
-    return JSON.parse(localStorage.getItem("isEnglish") as string) ?? true
-  })
+  // Set English as default
+  const currentLanguage = language ?? 'en'
 
-  const [contentsType, setContentsType] = useState<contents>(() => {
-    return JSON.parse(localStorage.getItem("contentsType") as string) ?? "algorithms"
-  })
+  const navigate = useNavigate()
+
+  const validLanguage = SUPPORTED_LANGUAGES.includes(language || "") ? language! : "en"
+
   useEffect(() => {
-    if (categoryName) {
-      setContentsType(categoryName as contents)
+    if (!SUPPORTED_LANGUAGES.includes(language || "")) {
+      navigate(`/en/${categoryName}`, { replace: true })
     }
-  }, [categoryName])
-  const [showCards, setShowCards] = useState(() => {
-    return JSON.parse(localStorage.getItem("showCards") as string) ?? true
-  })
+  }, [language, categoryName, navigate])
 
+  const [selectedLanguage, setSelectedLanguage] = useState(validLanguage)
+  const [contentsType, setContentsType] = useState<contents>(categoryName as contents)
+  const [showCards, setShowCards] = useState(true)
   const [mobileOpen, setMobileOpen] = useState(false)
+
   const toggleDrawer = () => {
     setMobileOpen(!mobileOpen)
   }
@@ -39,8 +43,8 @@ const Layout: React.FC = () => {
       <ThemeProvider theme={theme}>
         <div className="header">
           <NavBar
-            isEnglish={isEnglish}
-            setIsEnglish={setIsEnglish}
+            selectedLanguage={selectedLanguage}
+            setSelectedLanguage={setSelectedLanguage}
             isMobile={isMobile}
             toggleDrawer={toggleDrawer}
           />
@@ -51,6 +55,8 @@ const Layout: React.FC = () => {
               <SideBar
                 setContentsType={setContentsType}
                 setShowCards={setShowCards}
+                selectedLanguage={selectedLanguage}
+                setSelectedLanguage={setSelectedLanguage}
                 mobileOpen={mobileOpen}
                 toggleDrawer={toggleDrawer}
               />
@@ -60,6 +66,8 @@ const Layout: React.FC = () => {
             <SideBar
               setContentsType={setContentsType}
               setShowCards={setShowCards}
+              selectedLanguage={selectedLanguage}
+              setSelectedLanguage={setSelectedLanguage}
               mobileOpen={mobileOpen}
               toggleDrawer={toggleDrawer}
             />
@@ -68,7 +76,7 @@ const Layout: React.FC = () => {
             <ContentsArea
               setShowCards={setShowCards}
               showCards={showCards}
-              isEnglish={isEnglish}
+              selectedLanguage={selectedLanguage}
               contentsType={contentsType}
             />
           </div>

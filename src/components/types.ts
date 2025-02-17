@@ -16,7 +16,7 @@ export interface MarkdownContentProps {
 export interface ContentProps {
   setShowCards: Dispatch<SetStateAction<boolean>>
   content: contentType
-  isEnglish: boolean
+  selectedLanguage: string
 }
 
 export interface BackButtontProps {
@@ -40,13 +40,22 @@ export interface ContentCardsProps {
 export interface ContentsAreaProps {
   setShowCards: Dispatch<SetStateAction<boolean>>
   showCards: boolean
-  isEnglish: boolean
+  selectedLanguage: string
   contentsType: contents
 }
 
 export interface SideBarProps {
   setContentsType: Dispatch<SetStateAction<contents>>
   setShowCards: Dispatch<SetStateAction<boolean>>
+  selectedLanguage: string
+  setSelectedLanguage: Dispatch<SetStateAction<string>>
   mobileOpen: boolean
+  toggleDrawer: () => void
+}
+
+export interface NavBarProps {
+  selectedLanguage: string
+  setSelectedLanguage: Dispatch<SetStateAction<string>>
+  isMobile: boolean
   toggleDrawer: () => void
 }

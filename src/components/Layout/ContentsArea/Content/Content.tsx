@@ -15,9 +15,20 @@ const Content: React.FC<ContentProps> = (props) => {
 
   const content = props.content || defaultContent
 
-  const language = () => props.isEnglish ? 'jp' : 'en'
-  const languageText = language() === 'jp' ? 'Japanese' : 'English'
-  const noContent = (<h3>This page is not available in {languageText}.</h3>)
+  const language = () => props.selectedLanguage ?? 'en'
+  const getLanguageLabel = (lang: string): string => {
+    switch (lang) {
+      case "en":
+        return "English";
+      case "jp":
+        return "日本語";
+      case "th":
+        return "Thai";
+      default:
+        return "Unknown";
+    }
+  }
+  const noContent = (<h3>This page is not available in {getLanguageLabel(language())}.</h3>)
 
   const [read, setRead] = useState('')
   const [showNoContent, setShowNoContent] = useState(false)
@@ -37,7 +48,7 @@ const Content: React.FC<ContentProps> = (props) => {
         setRead('')
         setTimeout(() => setShowNoContent(true), 1000)
       })
-  }, [props.isEnglish])
+  }, [props.selectedLanguage])
 
   const showNormal = () => {
     return read === '' ? (showNoContent ? <div>{noContent}</div> : null) : <MarkdownContent read={read} />

@@ -20,7 +20,7 @@ const Items: React.FC<SideBarProps> = (props) => {
           onClick={() => {
             props.setContentsType('about')
             props.setShowCards(false)
-            navigate(`/category/about`)
+            navigate(`/${props.selectedLanguage}/about`)
             props.toggleDrawer()
           }}
         >
@@ -36,7 +36,7 @@ const Items: React.FC<SideBarProps> = (props) => {
           onClick={() => {
             props.setContentsType('algorithms')
             props.setShowCards(true)
-            navigate(`/category/algorithms`)
+            navigate(`/${props.selectedLanguage}/algorithms`)
             props.toggleDrawer()
           }}
         >
@@ -52,7 +52,7 @@ const Items: React.FC<SideBarProps> = (props) => {
           onClick={() => {
             props.setContentsType('leetcode')
             props.setShowCards(true)
-            navigate(`/category/leetcode`)
+            navigate(`/${props.selectedLanguage}/leetcode`)
             props.toggleDrawer() // ← 追加
           }}
         >
@@ -68,7 +68,7 @@ const Items: React.FC<SideBarProps> = (props) => {
           onClick={() => {
             props.setContentsType('aws')
             props.setShowCards(true)
-            navigate(`/category/aws`)
+            navigate(`/${props.selectedLanguage}/aws`)
             props.toggleDrawer()
           }}
         >
@@ -83,7 +83,7 @@ const Items: React.FC<SideBarProps> = (props) => {
           onClick={() => {
             props.setContentsType('others')
             props.setShowCards(true)
-            navigate(`/category/others`)
+            navigate(`/${props.selectedLanguage}/others`)
             props.toggleDrawer()
           }}
         >

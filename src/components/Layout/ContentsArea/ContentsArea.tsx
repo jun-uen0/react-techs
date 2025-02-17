@@ -27,7 +27,7 @@ const ContentsArea: React.FC<ContentsAreaProps> = (props) => {
         ? <Content
           setShowCards={props.setShowCards}
           content={selectedContent}
-          isEnglish={props.isEnglish}
+          selectedLanguage={props.selectedLanguage}
         />
         : <ContentCards
           setShowCards={props.setShowCards}

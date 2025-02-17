@@ -28,6 +28,8 @@ const SideBar: React.FC<SideBarProps> = (props) => {
                 <Items
                   setContentsType={props.setContentsType}
                   setShowCards={props.setShowCards}
+                  selectedLanguage={props.selectedLanguage}
+                  setSelectedLanguage={props.setSelectedLanguage}
                   mobileOpen={props.mobileOpen}
                   toggleDrawer={props.toggleDrawer}
                 />
@@ -42,6 +44,8 @@ const SideBar: React.FC<SideBarProps> = (props) => {
             <Items
               setContentsType={props.setContentsType}
               setShowCards={props.setShowCards}
+              selectedLanguage={props.selectedLanguage}
+              setSelectedLanguage={props.setSelectedLanguage}
               mobileOpen={props.mobileOpen}
               toggleDrawer={props.toggleDrawer}
             />
