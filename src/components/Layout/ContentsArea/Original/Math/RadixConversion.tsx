@@ -21,7 +21,6 @@ const RadixConversion: React.FC = () => {
           <OtherRadixToDecimal />
         </Container>
 
-        {/* あとでがんばる */}
         <br />
         <br />
         <br />

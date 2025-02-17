@@ -2,8 +2,8 @@ import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
-import profilePic from '../../../../assets/profile_20241028.png'
 import Sns from './Sns'
+import profilePic from '../../../../assets/profile_20241028.png'
 
 const Profile: React.FC = () => {
   return (
@@ -29,10 +29,6 @@ const Profile: React.FC = () => {
           <br />
         </Typography>
         <Sns />
-        {/* <Typography sx={{ textAlign: "center", mt: 1 }}>
-          <br />
-          #AWS #Python #Node.js
-        </Typography> */}
         <Typography variant="body2" sx={{ textAlign: "center", mt: 1 }}>
           <br />
           "If you feel like the dumbest person in the room, you're in the right room."

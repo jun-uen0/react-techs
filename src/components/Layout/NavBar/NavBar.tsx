@@ -1,11 +1,11 @@
 import { Dispatch, SetStateAction } from "react"
-import TitleAndLogo from "./parts/TitleAndLogo"
-import Language from "./parts/Language"
 import Toolbar from "@mui/material/Toolbar"
 import AppBar from "@mui/material/AppBar"
 import IconButton from "@mui/material/IconButton"
 import MenuIcon from "@mui/icons-material/Menu"
 import Box from "@mui/material/Box"
+import TitleAndLogo from "./parts/TitleAndLogo"
+import Language from "./parts/Language"
 
 type NavBarProps = {
   isEnglish: boolean

@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
+import { ThemeProvider } from "@mui/material/styles"
+import useMediaQuery from "@mui/material/useMediaQuery"
 import NavBar from "./NavBar/NavBar"
 import SideBar from "./SideBar/SideBar"
 import CardArea from "./CardArea/CardArea"
 import ContentsArea from "./ContentsArea/ContentsArea"
-import { ThemeProvider } from "@mui/material/styles"
 import { contents } from "../types"
 import { theme } from "../theme"
-import useMediaQuery from "@mui/material/useMediaQuery"
 
 const Layout: React.FC = () => {
   const isMobile = useMediaQuery('(max-width: 768px)')

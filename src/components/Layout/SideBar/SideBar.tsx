@@ -1,13 +1,10 @@
 import Box from '@mui/material/Box'
 import Toolbar from '@mui/material/Toolbar'
 import List from '@mui/material/List'
+import Drawer from '@mui/material/Drawer'
+import useMediaQuery from '@mui/material/useMediaQuery'
 import Items from './parts/Items'
 import { SideBarProps } from '../../types'
-import Drawer from '@mui/material/Drawer'
-import IconButton from '@mui/material/IconButton'
-import MenuIcon from '@mui/icons-material/Menu'
-import { useState } from 'react'
-import useMediaQuery from '@mui/material/useMediaQuery'
 
 const SideBar: React.FC<SideBarProps> = (props) => {
   const isMobile = useMediaQuery('(max-width: 768px)')

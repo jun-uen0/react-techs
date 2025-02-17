@@ -1,6 +1,4 @@
 import { useNavigate } from 'react-router-dom'
-import LeetCodeLogo from '../../../../assets/leetcode_black.png'
-import LaptopLogo from '../../../../assets/laptop.png'
 import ListItem from '@mui/material/ListItem'
 import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
@@ -9,6 +7,8 @@ import InfoIcon from '@mui/icons-material/Info'
 import Code from '@mui/icons-material/Code'
 import CloudQueue from '@mui/icons-material/CloudQueue'
 import { SideBarProps } from '../../../types'
+import LeetCodeLogo from '../../../../assets/leetcode_black.png'
+import LaptopLogo from '../../../../assets/laptop.png'
 
 const Items: React.FC<SideBarProps> = (props) => {
   const navigate = useNavigate()
