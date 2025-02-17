@@ -1,18 +1,17 @@
-import { useSearchParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import LeetCodeLogo from '../../../../assets/leetcode_black.png'
 import LaptopLogo from '../../../../assets/laptop.png'
 import ListItem from '@mui/material/ListItem'
 import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
 import Button from '@mui/material/Button'
+import InfoIcon from '@mui/icons-material/Info'
 import Code from '@mui/icons-material/Code'
 import CloudQueue from '@mui/icons-material/CloudQueue'
-import InfoIcon from '@mui/icons-material/Info'
-import Divider from '@mui/material/Divider'
 import { SideBarProps } from '../../../types'
 
 const Items: React.FC<SideBarProps> = (props) => {
-  const [searchParams, setSearchParams] = useSearchParams()
+  const navigate = useNavigate()
 
   return (
     <>
@@ -21,30 +20,30 @@ const Items: React.FC<SideBarProps> = (props) => {
           onClick={() => {
             props.setContentsType('about')
             props.setShowCards(false)
-            setSearchParams({ item: 'about' })
+            navigate(`/category/about`)
             props.toggleDrawer()
           }}
         >
           <ListItemIcon>
             <InfoIcon color='secondary' />
           </ListItemIcon>
-          <ListItemText primary={'About Me'} sx={{ color: "#091c33" }} />
+          <ListItemText primary={'About Me'} sx={{ color: '#091c33' }} />
         </Button>
       </ListItem>
-      <Divider sx={{ my: 1, mx: 2 }} />
+
       <ListItem key={'Algorithms'}>
         <Button
           onClick={() => {
             props.setContentsType('algorithms')
             props.setShowCards(true)
-            setSearchParams({ item: 'algorithms' })
+            navigate(`/category/algorithms`)
             props.toggleDrawer()
           }}
         >
           <ListItemIcon>
             <Code color='secondary' />
           </ListItemIcon>
-          <ListItemText primary={'Algorithms'} sx={{ color: "#091c33" }} />
+          <ListItemText primary={'Algorithms'} sx={{ color: '#091c33' }} />
         </Button>
       </ListItem>
 
@@ -53,7 +52,7 @@ const Items: React.FC<SideBarProps> = (props) => {
           onClick={() => {
             props.setContentsType('leetcode')
             props.setShowCards(true)
-            setSearchParams({ item: 'leetcode' })
+            navigate(`/category/leetcode`)
             props.toggleDrawer() // ← 追加
           }}
         >
@@ -69,7 +68,7 @@ const Items: React.FC<SideBarProps> = (props) => {
           onClick={() => {
             props.setContentsType('aws')
             props.setShowCards(true)
-            setSearchParams({ item: 'aws' })
+            navigate(`/category/aws`)
             props.toggleDrawer()
           }}
         >
@@ -79,13 +78,12 @@ const Items: React.FC<SideBarProps> = (props) => {
           <ListItemText primary={'AWS'} sx={{ color: "#091c33" }} />
         </Button>
       </ListItem>
-
       <ListItem key={'Others'}>
         <Button
           onClick={() => {
             props.setContentsType('others')
             props.setShowCards(true)
-            setSearchParams({ item: 'others' })
+            navigate(`/category/others`)
             props.toggleDrawer()
           }}
         >

@@ -1,39 +1,33 @@
-import { useState, useEffect } from 'react'
-import NavBar from './NavBar/NavBar'
-import SideBar from './SideBar/SideBar'
-import CardArea from './CardArea/CardArea'
+import { useState, useEffect } from "react"
+import { useParams } from "react-router-dom"
+import NavBar from "./NavBar/NavBar"
+import SideBar from "./SideBar/SideBar"
+import CardArea from "./CardArea/CardArea"
 import ContentsArea from "./ContentsArea/ContentsArea"
-import { ThemeProvider } from '@mui/material/styles' // 修正 ✅
-import { contents } from '../types'
-import { theme } from '../theme'
-import useMediaQuery from '@mui/material/useMediaQuery'
+import { ThemeProvider } from "@mui/material/styles"
+import { contents } from "../types"
+import { theme } from "../theme"
+import useMediaQuery from "@mui/material/useMediaQuery"
 
 const Layout: React.FC = () => {
   const isMobile = useMediaQuery('(max-width: 768px)')
+  const { categoryName } = useParams<{ categoryName: string }>()
 
   const [isEnglish, setIsEnglish] = useState(() => {
-    const isEnglish = localStorage.getItem('isEnglish')
-    return JSON.parse(isEnglish as string) as boolean ?? true
+    return JSON.parse(localStorage.getItem("isEnglish") as string) ?? true
+  })
+
+  const [contentsType, setContentsType] = useState<contents>(() => {
+    return JSON.parse(localStorage.getItem("contentsType") as string) ?? "algorithms"
   })
   useEffect(() => {
-    localStorage.setItem('isEnglish', JSON.stringify(isEnglish))
-  }, [isEnglish])
-
-  const [contentsType, setContentsType] = useState((): contents => {
-    const contentsType = localStorage.getItem('contentsType')
-    return JSON.parse(contentsType as string) ?? 'algorithms'
-  })
-  useEffect(() => {
-    localStorage.setItem('contentsType', JSON.stringify(contentsType))
-  }, [contentsType])
-
+    if (categoryName) {
+      setContentsType(categoryName as contents)
+    }
+  }, [categoryName])
   const [showCards, setShowCards] = useState(() => {
-    const showCards = localStorage.getItem('showCards')
-    return JSON.parse(showCards as string) as boolean ?? true
+    return JSON.parse(localStorage.getItem("showCards") as string) ?? true
   })
-  useEffect(() => {
-    localStorage.setItem('showCards', JSON.stringify(showCards))
-  }, [showCards])
 
   const [mobileOpen, setMobileOpen] = useState(false)
   const toggleDrawer = () => {
@@ -42,7 +36,7 @@ const Layout: React.FC = () => {
 
   return (
     <div className="App">
-      <ThemeProvider theme={theme}> {/* 修正 ✅ */}
+      <ThemeProvider theme={theme}>
         <div className="header">
           <NavBar
             isEnglish={isEnglish}
