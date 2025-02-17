@@ -1,5 +1,6 @@
 import { createTheme } from '@mui/material/styles'
-import { makeStyles } from '@mui/styles'
+import { styled } from '@mui/system'
+import Button from '@mui/material/Button'
 
 export const theme = createTheme({
   palette: {
@@ -17,17 +18,17 @@ export const theme = createTheme({
   },
 })
 
-export const useStyles = makeStyles({
-  back: {
-    background: "#ffffff",
-    color: '#000000',
-  },
-  learnMore: {
-    background: "#00a2ff",
-    color: '#ffffff',
-    margin: '10px',
-  },
-  text: {
-    color: '#ffffff',
-  },
+export const Back = styled('div')({
+  background: "#ffffff",
+  color: '#000000',
+})
+
+export const LearnMoreButton = styled(Button)({
+  background: "#00a2ff",
+  color: '#ffffff',
+  margin: '10px',
+})
+
+export const Text = styled('p')({
+  color: '#ffffff',
 })
