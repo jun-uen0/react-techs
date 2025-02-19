@@ -1,5 +1,10 @@
 [
   {
+    "title": "Perfect Number",
+    "path": "articles/articles/algorithms/perfect_number",
+    "description": "The art of Perfect Number"
+  },
+  {
     "title": "Binary Search",
     "path": "articles/articles/algorithms/binary_search",
     "description": "Explanation of the binary search algorithm"
