@@ -10,14 +10,14 @@ import { contents } from "../types"
 import { theme } from "../theme"
 
 // Language
-const SUPPORTED_LANGUAGES = ["en", "jp"]
+const SUPPORTED_LANGUAGES = ["en", "jp", "th"]
 
 const Layout: React.FC = () => {
   const isMobile = useMediaQuery('(max-width: 768px)')
   const { language, categoryName } = useParams<{ language: string; categoryName: string }>()
 
   // Set English as default
-  const currentLanguage = language ?? 'en'
+  // const currentLanguage = language ?? 'en'
 
   const navigate = useNavigate()
 

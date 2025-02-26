@@ -50,6 +50,7 @@ const NavBar: React.FC<NavBarProps> = (props) => {
           <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={() => setAnchorEl(null)}>
             <MenuItem onClick={() => handleMenuClose("en")}>English</MenuItem>
             <MenuItem onClick={() => handleMenuClose("jp")}>日本語</MenuItem>
+            <MenuItem onClick={() => handleMenuClose("th")}>ไทย</MenuItem>
           </Menu>
         </Toolbar>
       </AppBar>
