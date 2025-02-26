@@ -25,7 +25,7 @@ const Profile: React.FC = () => {
         </Typography>
         <Typography sx={{ textAlign: "center", mt: 1 }}>
           SRE, DevOps, Cloud Platform <br />
-          Based in Thailand and Japan <br />
+          Based in Thailand<br />
           <br />
         </Typography>
         <Sns />
