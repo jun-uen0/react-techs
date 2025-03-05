@@ -6,7 +6,7 @@ import LinkedIn from '@mui/icons-material/LinkedIn'
 import LeetCodeLogo from '../../../../assets/leetcode_black.png'
 import X from '../../../../assets/x.png'
 import Threads from '../../../../assets/threads.png'
-import Note from '../../../../assets/note.png'
+import Note from '../../../../assets/note_logo.png'
 
 const snsLinks = [
   { icon: <GitHub />, link: "https://github.com/jun-uen0" },
@@ -15,7 +15,7 @@ const snsLinks = [
   // { icon: <YouTube />, link: "https://www.youtube.com/@JunTechJPN" },
   // { icon: <img src={Threads} alt="Threads" height="25px" />, link: "https://www.threads.net/@jun__ueno" },
   // { icon: <img src={X} alt="X" height="25px" />, link: "https://x.com/jun_uen0" },
-  // { icon: <img src={Note} alt="Note" height="25px" />, link: "https://note.com/jun_uen0" },
+  { icon: <img src={Note} alt="Note" height="25px" />, link: "https://note.com/jun_uen0" },
 ]
 
 const SNS = () => {
