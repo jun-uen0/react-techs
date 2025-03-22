@@ -1,5 +1,15 @@
 [
   {
+    "title": "Dynamic Programming",
+    "path": "articles/articles/algorithms/dynamic_programming",
+    "description": "Find Fibonacci Numbers with DPs"
+  },
+  {
+    "title": "Segment Tree",
+    "path": "articles/articles/algorithms/segment_tree",
+    "description": "Finding max, min, sum, and gcd in array updated dynamically"
+  },
+  {
     "title": "Perfect Number",
     "path": "articles/articles/algorithms/perfect_number",
     "description": "The art of Perfect Number"
