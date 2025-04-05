@@ -1,8 +1,28 @@
 [
   {
-    "title": "Dynamic Programming",
+    "title": "Dynamic Programming Overview",
     "path": "articles/articles/algorithms/dynamic_programming",
-    "description": "Find Fibonacci Numbers with DPs"
+    "description": "Overview of Dynamic Programming"
+  },
+  {
+    "title": " 0/1 Knapsack Problem Explained with 1D & 2D Dynamic Programming",
+    "path": "articles/articles/algorithms/dp_knapsack",
+    "description": "Maximize value with a limited weight budget using both 1D space-optimized and 2D tabulation approaches"
+  },
+  {
+    "title": "Longest Increasing Subsequence (LIS) using DP",
+    "path": "articles/articles/algorithms/dp_lis",
+    "description": "Identify the longest ordered subsequence in an array with classic DP techniques"
+  },
+  {
+    "title": "Longest Common Subsequence (LCS) with Dynamic Programming",
+    "path": "articles/articles/algorithms/dp_lcs",
+    "description": "Find the length of the longest subsequence common to two strings using 2D tabulation"
+  },
+  {
+    "title": "Fibonacci Numbers with Dynamic Programming",
+    "path": "articles/articles/algorithms/dp_fibonacci",
+    "description": "Efficiently generate Fibonacci sequences using recursion, memoization, and bottom-up DP"
   },
   {
     "title": "Segment Tree",
